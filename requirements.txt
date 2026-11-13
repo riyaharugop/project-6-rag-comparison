@@ -1,0 +1,7 @@
+pypdf
+nltk
+numpy
+pandas
+sentence-transformers
+faiss-cpu
+matplotlib
