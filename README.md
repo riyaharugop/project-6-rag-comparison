@@ -1,2 +1,115 @@
-# project-6-rag-comparison
-Comparative Analysis of Chunking Strategies and Embedding Models on RAG Retrieval
+# Project 6: Comparative Analysis of Chunking Strategies and Embedding Models on RAG Retrieval
+
+## 📌 Project Overview
+
+This project focuses on studying how different text chunking strategies and embedding models affect the retrieval performance and answer generation quality of Retrieval-Augmented Generation (RAG) systems.
+
+RAG systems retrieve relevant information from a knowledge base before passing it to a Large Language Model (LLM) to generate answers.
+
+The quality of the generated answers depends significantly on how documents are divided into chunks and how those chunks are represented using embeddings.
+
+Our project aims to experimentally compare different chunking strategies and embedding models to identify effective combinations for technical documentation.
+
+## 🎯 Objectives
+
+- Implement and compare different text chunking strategies.
+- Evaluate fixed-size, sentence-level and semantic chunking.
+- Experiment with multiple embedding models, including BGE, OpenAI and Hugging Face open-source models.
+- Implement vector-based retrieval using FAISS and ChromaDB, subject to the final experiment scope.
+- Evaluate retrieval and answer generation using:
+  - Context Recall
+  - Context Precision
+  - Groundedness
+  - Latency
+- Analyse performance trade-offs and develop a decision matrix.
+- Recommend suitable chunking and embedding combinations for technical documentation.
+
+## ⚙️ Proposed Methodology
+
+The project follows this pipeline:
+
+1. **Document Collection:** Collect technical documents and prepare a knowledge base.
+2. **Preprocessing:** Extract and clean text from the collected documents.
+3. **Chunking:** Divide documents using fixed-size, sentence-level and semantic chunking.
+4. **Embedding Generation:** Convert text chunks into numerical vector representations using different embedding models.
+5. **Vector Storage:** Store embeddings in vector databases such as FAISS and ChromaDB.
+6. **Retrieval:** Retrieve the most relevant chunks based on user queries.
+7. **Answer Generation:** Pass retrieved context to an LLM to generate answers.
+8. **Evaluation:** Compare configurations using Context Recall, Context Precision, Groundedness and Latency.
+
+## 🛠️ Technology Stack
+
+| Component | Technologies |
+|---|---|
+| Programming Language | Python |
+| Development Environment | VS Code, Jupyter Notebook |
+| Document Processing | PyPDF |
+| Text Processing | NLTK / spaCy |
+| Chunking | Fixed-size, Sentence-level, Semantic |
+| Embedding Models | BGE, OpenAI, Hugging Face |
+| Vector Stores | FAISS, ChromaDB |
+| RAG Pipeline | Python / LangChain (if required) |
+| Evaluation | RAGAS / Custom evaluation |
+| Data Analysis | Pandas, Matplotlib |
+| Version Control | Git, GitHub |
+
+## 📁 Project Structure
+
+```text
+project-6-rag-comparison/
+│
+├── data/
+│   ├── raw_docs/
+│   └── processed_docs/
+│
+├── src/
+│   ├── member1/
+│   ├── member2/
+│   ├── member3/
+│   └── member4/
+│
+├── results/
+│
+├── requirements.txt
+├── README.md
+└── .gitignore
+```
+
+## 👥 Team Structure
+
+The project is divided among four members:
+
+| Member | Responsibility |
+|---|---|
+| Member 1 | Dataset collection, preprocessing, fixed-size and sentence-level chunking |
+| Member 2 | Semantic chunking implementation |
+| Member 3 | Embedding models, vector storage and retrieval |
+| Member 4 | Answer generation, evaluation, integration and result analysis |
+
+All members will contribute to testing, integration, documentation and final project preparation.
+
+## 📊 Expected Outcomes
+
+- A functional RAG experimentation pipeline.
+- Implementation of multiple chunking strategies.
+- Comparative evaluation of different embedding models.
+- Performance measurements using the selected evaluation metrics.
+- Graphical comparisons of experimental results.
+- A decision matrix recommending suitable configurations for technical documentation.
+- A guidelines report describing findings and trade-offs.
+
+## 📅 Project Duration
+
+The original project guidelines specify a 10–12 week mini-project. The team is currently following an accelerated implementation schedule for its initial prototype.
+
+## 📚 Project Type
+
+Fundamental / Empirical Study
+
+**Course:** Prompt Engineering and Optimization for Generative AI  
+**Course Code:** UE24AM343AB5  
+**Stream:** B.Tech CSE – Artificial Intelligence and Machine Learning
+
+---
+
+*Note: Final experimental configurations, datasets, model versions and results will be documented as implementation progresses.*
