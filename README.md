@@ -53,6 +53,20 @@ The project follows this pipeline:
 | Data Analysis | Pandas, Matplotlib |
 | Version Control | Git, GitHub |
 
+### Member 3 embedding backends
+
+The shared interface in `src/member3/embeddings.py` supports `bge`,
+`huggingface`, and `openai` providers. Defaults are `BAAI/bge-small-en-v1.5`,
+`sentence-transformers/all-MiniLM-L6-v2`, and `text-embedding-3-small`.
+Each provider can be selected with `EmbeddingConfig`; `model_name` and
+`batch_size` can be overridden. BGE adds its retrieval instruction to queries,
+not document passages. All adapters return unit-normalized vectors and expose
+the latest call's model, dimension, elapsed time, and vector count through
+`get_last_run_stats()`.
+
+OpenAI embeddings require the `OPENAI_API_KEY` environment variable. The key is
+read at runtime; it should not be stored in source files.
+
 ## 📁 Project Structure
 
 ```text
