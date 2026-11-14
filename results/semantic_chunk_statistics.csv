@@ -1,0 +1,11 @@
+document,strategy,target_size,overlap,total_chunks,average_length,minimum_length,maximum_length,total_characters
+paper1.txt,semantic,500,1,1098,359.91,19,615,395186
+paper1.txt,semantic,1000,1,472,740.99,298,1000,349745
+paper2.txt,semantic,500,1,1331,342.75,33,500,456200
+paper2.txt,semantic,1000,1,570,749.82,93,1000,427396
+paper3.txt,semantic,500,1,465,329.97,91,500,153435
+paper3.txt,semantic,1000,1,187,731.76,139,1000,136840
+paper4.txt,semantic,500,1,1052,360.43,68,500,379171
+paper4.txt,semantic,1000,1,422,741.05,100,1000,312723
+paper5.txt,semantic,500,1,538,353.26,46,1279,190054
+paper5.txt,semantic,1000,1,228,709.48,46,1279,161761
