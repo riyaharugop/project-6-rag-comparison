@@ -1,0 +1,27 @@
+{
+  "query_set_id": "nist-member3-retrieval-v1",
+  "synthetic": true,
+  "relevance_labels_available": false,
+  "queries": [
+    {
+      "query_id": "q01",
+      "query": "What are confidentiality, integrity, and availability, and how do they support information security?"
+    },
+    {
+      "query_id": "q02",
+      "query": "How are threat events, vulnerabilities, likelihood, and impact used to determine information-system risk?"
+    },
+    {
+      "query_id": "q03",
+      "query": "What core incident-response functions help organizations manage cybersecurity risk?"
+    },
+    {
+      "query_id": "q04",
+      "query": "What activities make up an information-security assessment from planning through reporting?"
+    },
+    {
+      "query_id": "q05",
+      "query": "What cyber-threat information can organizations share, and how should that sharing be managed?"
+    }
+  ]
+}
