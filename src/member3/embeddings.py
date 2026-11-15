@@ -466,6 +466,7 @@ def embed_chunk_records(
         )
 
     dimension = embedding_model.get_dimension()
+    model_name = embedding_model.get_model_name()
     for index, vector in enumerate(vectors):
         if len(vector) != dimension:
             raise RuntimeError(
@@ -473,5 +474,7 @@ def embed_chunk_records(
                 f"has dimension {len(vector)}; expected {dimension}."
             )
         records[index]["embedding"] = vector
+        records[index]["retrieval_embedding_model"] = model_name
+        records[index]["embedding_dimension"] = dimension
 
     return records
