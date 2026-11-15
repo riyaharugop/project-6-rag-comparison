@@ -1,0 +1,782 @@
+{
+  "run_id": "20261115T071005Z_4b9a86c7",
+  "created_at_utc": "2026-11-15T07:10:06.492306+00:00",
+  "query_set_id": "nist-member3-retrieval-v1",
+  "query_set_synthetic": true,
+  "relevance_labels_available": false,
+  "query_count": 5,
+  "top_k": 5,
+  "source_documents": [
+    "paper1.txt",
+    "paper2.txt",
+    "paper3.txt",
+    "paper4.txt",
+    "paper5.txt"
+  ],
+  "chunking_configuration_count": 6,
+  "embedding_models": [
+    {
+      "alias": "bge",
+      "model_name": "BAAI/bge-small-en-v1.5",
+      "dimension": 384,
+      "status": "loaded"
+    },
+    {
+      "alias": "minilm",
+      "model_name": "sentence-transformers/all-MiniLM-L6-v2",
+      "dimension": 384,
+      "status": "loaded"
+    }
+  ],
+  "skipped_models": [
+    {
+      "embedding_model": "text-embedding-3-small",
+      "status": "skipped",
+      "reason": "OPENAI_API_KEY is not configured."
+    }
+  ],
+  "skipped_vector_stores": [
+    {
+      "vector_store": "FAISS",
+      "status": "skipped",
+      "reason": "RuntimeError: FAISS is installed, but its native extension could not be loaded.. Cause: DLL load failed while importing _swigfaiss: An Application Control policy has blocked this file."
+    }
+  ],
+  "configurations": [
+    {
+      "experiment_id": "fixed_size-1b99619fab33-bge-chromadb",
+      "chunking_strategy": "fixed_size",
+      "chunking_configuration": {
+        "chunk_size": 500,
+        "overlap": 50
+      },
+      "source_chunk_files": [
+        "data\\chunks\\paper1_fixed_500.json",
+        "data\\chunks\\paper2_fixed_500.json",
+        "data\\chunks\\paper3_fixed_500.json",
+        "data\\chunks\\paper4_fixed_500.json",
+        "data\\chunks\\paper5_fixed_500.json"
+      ],
+      "source_file_hashes": {
+        "data\\chunks\\paper1_fixed_500.json": "b8e2f3e7127c6030a02f591376d6ba13fc8e73d092ccfd1bb81214ef96dc9b26",
+        "data\\chunks\\paper2_fixed_500.json": "2070d3f2b1101f942fdf54f4447078752d454df19b2760ee516f0084d2504bdb",
+        "data\\chunks\\paper3_fixed_500.json": "c81e7d7994db2efd6c1423d71cb31c90957a60d3a72909ffd55de3e287c44f1d",
+        "data\\chunks\\paper4_fixed_500.json": "be7d1755d3e9619cc5f3c353f9459212aac1e85a7a53a6855a2e9f8c41f41f2b",
+        "data\\chunks\\paper5_fixed_500.json": "cb947f8d13301d6ad527597ff801f7a18e084b2050d32ca0c010a36668c921ec"
+      },
+      "source_documents": [
+        "paper1.txt",
+        "paper2.txt",
+        "paper3.txt",
+        "paper4.txt",
+        "paper5.txt"
+      ],
+      "number_of_chunks": 2376,
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_dimension": 384,
+      "embedding_processing_time_seconds": 117.0025212999899,
+      "vector_store": "ChromaDB",
+      "index_build_time_seconds": 3.6641081999987364,
+      "index_persistence_status": "built_and_persisted",
+      "index_info": {
+        "collection_name": "exp-4b9a86c7-bge-21b63577335e7602fca9fabf0709e86d",
+        "persist_directory": "C:\\Users\\HP\\Desktop\\project-6-rag-comparison\\indexes\\chroma",
+        "index_id": "21b63577335e7602fca9fabf0709e86d1878104f21416ba5d4c37dfde1796ab3",
+        "retrieval_embedding_model": "BAAI/bge-small-en-v1.5",
+        "embedding_dimension": 384,
+        "strategy": "fixed_size",
+        "chunking_configuration": {
+          "chunk_size": 500,
+          "overlap": 50
+        },
+        "corpus_fingerprint": "77e6a5d790f7530bd7db1c3259b00b9d83a833dba37a4f0e0c9bc1ce58b9c517",
+        "chunk_count": 2376,
+        "similarity_metric": "cosine",
+        "indexing_time_seconds": 3.6641081999987364,
+        "retrieval_latency_seconds": null
+      },
+      "index_path": null,
+      "collection_name": "exp-4b9a86c7-bge-21b63577335e7602fca9fabf0709e86d",
+      "retrieval_status": "success",
+      "repeatability_status": "passed",
+      "warnings": [],
+      "status": "success"
+    },
+    {
+      "experiment_id": "fixed_size-ef63a9c4ad81-bge-chromadb",
+      "chunking_strategy": "fixed_size",
+      "chunking_configuration": {
+        "chunk_size": 1000,
+        "overlap": 100
+      },
+      "source_chunk_files": [
+        "data\\chunks\\paper1_fixed_1000.json",
+        "data\\chunks\\paper2_fixed_1000.json",
+        "data\\chunks\\paper3_fixed_1000.json",
+        "data\\chunks\\paper4_fixed_1000.json",
+        "data\\chunks\\paper5_fixed_1000.json"
+      ],
+      "source_file_hashes": {
+        "data\\chunks\\paper1_fixed_1000.json": "7f4c08533f555aa2c1c2f5c4edff86e102453f97729e31c6bebbe5cc5a4a8777",
+        "data\\chunks\\paper2_fixed_1000.json": "4e22b700b546946f533e17f73047cf3c7a912c89ac745b6009cac09a00177383",
+        "data\\chunks\\paper3_fixed_1000.json": "7ef49236ccba01e997c08fc3c1c383dd03fbf9f94729aeb262ab0ce48ec046bd",
+        "data\\chunks\\paper4_fixed_1000.json": "85d529dae23e9370b49be488e4ea1bc1c3e0da1dde04d0fb13d78ef1b5552d98",
+        "data\\chunks\\paper5_fixed_1000.json": "a48d7a6eba75db0f5fc9e11fa5ab27a3264a421c9012e6d776b9f322ccc987e6"
+      },
+      "source_documents": [
+        "paper1.txt",
+        "paper2.txt",
+        "paper3.txt",
+        "paper4.txt",
+        "paper5.txt"
+      ],
+      "number_of_chunks": 1189,
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_dimension": 384,
+      "embedding_processing_time_seconds": 127.3616086000111,
+      "vector_store": "ChromaDB",
+      "index_build_time_seconds": 1.5492042000114452,
+      "index_persistence_status": "built_and_persisted",
+      "index_info": {
+        "collection_name": "exp-4b9a86c7-bge-e3d5d962e9549fcf0a3cd6ac597e1abd",
+        "persist_directory": "C:\\Users\\HP\\Desktop\\project-6-rag-comparison\\indexes\\chroma",
+        "index_id": "e3d5d962e9549fcf0a3cd6ac597e1abd21b498e846b216d7c385ba4502f8c5bb",
+        "retrieval_embedding_model": "BAAI/bge-small-en-v1.5",
+        "embedding_dimension": 384,
+        "strategy": "fixed_size",
+        "chunking_configuration": {
+          "chunk_size": 1000,
+          "overlap": 100
+        },
+        "corpus_fingerprint": "7836df1a495d7625a671891ba209655fc2ac0c7ff78307c38aa2cfbb7c67db95",
+        "chunk_count": 1189,
+        "similarity_metric": "cosine",
+        "indexing_time_seconds": 1.5492042000114452,
+        "retrieval_latency_seconds": null
+      },
+      "index_path": null,
+      "collection_name": "exp-4b9a86c7-bge-e3d5d962e9549fcf0a3cd6ac597e1abd",
+      "retrieval_status": "success",
+      "repeatability_status": "passed",
+      "warnings": [],
+      "status": "success"
+    },
+    {
+      "experiment_id": "sentence_level-78ee1b5fcf77-bge-chromadb",
+      "chunking_strategy": "sentence_level",
+      "chunking_configuration": {
+        "target_size": 500,
+        "overlap_sentences": 1
+      },
+      "source_chunk_files": [
+        "data\\sentence_chunks\\paper1_sentence_500.json",
+        "data\\sentence_chunks\\paper2_sentence_500.json",
+        "data\\sentence_chunks\\paper3_sentence_500.json",
+        "data\\sentence_chunks\\paper4_sentence_500.json",
+        "data\\sentence_chunks\\paper5_sentence_500.json"
+      ],
+      "source_file_hashes": {
+        "data\\sentence_chunks\\paper1_sentence_500.json": "41faae0451b0ff90453e8cd0a02ae8863fa9bd39ff4b858b8b4d1b7ca7d70091",
+        "data\\sentence_chunks\\paper2_sentence_500.json": "0fc225b9c1105b9e5956581cabc7c9a91b0083950ae4542e10543edeb47e1875",
+        "data\\sentence_chunks\\paper3_sentence_500.json": "9cd7078e0deca293fdebd3cde07bc419cec145750d7004295007da8480934c56",
+        "data\\sentence_chunks\\paper4_sentence_500.json": "0b19a8df57c5a21c61390a58fa654e882359025a9cf3364bcd374656894f0db0",
+        "data\\sentence_chunks\\paper5_sentence_500.json": "723b8822d716dae6306997d894af3c22051415f6643c3d327c0530703cb438eb"
+      },
+      "source_documents": [
+        "paper1.txt",
+        "paper2.txt",
+        "paper3.txt",
+        "paper4.txt",
+        "paper5.txt"
+      ],
+      "number_of_chunks": 3776,
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_dimension": 384,
+      "embedding_processing_time_seconds": 188.38060020000557,
+      "vector_store": "ChromaDB",
+      "index_build_time_seconds": 4.95162789997994,
+      "index_persistence_status": "built_and_persisted",
+      "index_info": {
+        "collection_name": "exp-4b9a86c7-bge-601ef7c7b625ca97ded75a88c9b8c437",
+        "persist_directory": "C:\\Users\\HP\\Desktop\\project-6-rag-comparison\\indexes\\chroma",
+        "index_id": "601ef7c7b625ca97ded75a88c9b8c437088a96927b10be41553447ff1f759f6c",
+        "retrieval_embedding_model": "BAAI/bge-small-en-v1.5",
+        "embedding_dimension": 384,
+        "strategy": "sentence_level",
+        "chunking_configuration": {
+          "overlap_sentences": 1,
+          "target_size": 500
+        },
+        "corpus_fingerprint": "69f0b5ddcb7d4baf0dfd02e5305f92a816c680111048e1f450f14b08a4b39b0f",
+        "chunk_count": 3776,
+        "similarity_metric": "cosine",
+        "indexing_time_seconds": 4.95162789997994,
+        "retrieval_latency_seconds": null
+      },
+      "index_path": null,
+      "collection_name": "exp-4b9a86c7-bge-601ef7c7b625ca97ded75a88c9b8c437",
+      "retrieval_status": "success",
+      "repeatability_status": "passed",
+      "warnings": [],
+      "status": "success"
+    },
+    {
+      "experiment_id": "sentence_level-5dcc14f9d2d2-bge-chromadb",
+      "chunking_strategy": "sentence_level",
+      "chunking_configuration": {
+        "target_size": 1000,
+        "overlap_sentences": 1
+      },
+      "source_chunk_files": [
+        "data\\sentence_chunks\\paper1_sentence_1000.json",
+        "data\\sentence_chunks\\paper2_sentence_1000.json",
+        "data\\sentence_chunks\\paper3_sentence_1000.json",
+        "data\\sentence_chunks\\paper4_sentence_1000.json",
+        "data\\sentence_chunks\\paper5_sentence_1000.json"
+      ],
+      "source_file_hashes": {
+        "data\\sentence_chunks\\paper1_sentence_1000.json": "7d3a9f11b312e4f636c67d563117a54cbff7f880ad61f790497c599c8cfe35d1",
+        "data\\sentence_chunks\\paper2_sentence_1000.json": "ed42890aa95d360f118026abe4cd8895e3768e02974e66dfcd512a7842f7ccd3",
+        "data\\sentence_chunks\\paper3_sentence_1000.json": "b19c1951118f95b1482608b1376f18c1896abaf1e83934232e4dbb085121847c",
+        "data\\sentence_chunks\\paper4_sentence_1000.json": "e72c08bbd94246f1049d9e0531402e033810009afce05b04df7e613845fda238",
+        "data\\sentence_chunks\\paper5_sentence_1000.json": "61bd3e59458467b442c9736a4338a34e11218aacfa677ad2e263b14067be720c"
+      },
+      "source_documents": [
+        "paper1.txt",
+        "paper2.txt",
+        "paper3.txt",
+        "paper4.txt",
+        "paper5.txt"
+      ],
+      "number_of_chunks": 1533,
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_dimension": 384,
+      "embedding_processing_time_seconds": 157.0486147000047,
+      "vector_store": "ChromaDB",
+      "index_build_time_seconds": 2.0556326000078116,
+      "index_persistence_status": "built_and_persisted",
+      "index_info": {
+        "collection_name": "exp-4b9a86c7-bge-eb53cd8be21b8e1df064ad458102047b",
+        "persist_directory": "C:\\Users\\HP\\Desktop\\project-6-rag-comparison\\indexes\\chroma",
+        "index_id": "eb53cd8be21b8e1df064ad458102047b38088b7f22b2df17876c697e93be3cfd",
+        "retrieval_embedding_model": "BAAI/bge-small-en-v1.5",
+        "embedding_dimension": 384,
+        "strategy": "sentence_level",
+        "chunking_configuration": {
+          "overlap_sentences": 1,
+          "target_size": 1000
+        },
+        "corpus_fingerprint": "38f90e72ce0d9f78ac2b21b2f7513cc272b81fc9534fbb6723efc622a293253a",
+        "chunk_count": 1533,
+        "similarity_metric": "cosine",
+        "indexing_time_seconds": 2.0556326000078116,
+        "retrieval_latency_seconds": null
+      },
+      "index_path": null,
+      "collection_name": "exp-4b9a86c7-bge-eb53cd8be21b8e1df064ad458102047b",
+      "retrieval_status": "success",
+      "repeatability_status": "passed",
+      "warnings": [],
+      "status": "success"
+    },
+    {
+      "experiment_id": "semantic-5c7ea7dede30-bge-chromadb",
+      "chunking_strategy": "semantic",
+      "chunking_configuration": {
+        "target_size": 500,
+        "min_size": 150,
+        "similarity_threshold": 0.25,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "overlap_sentences": 1
+      },
+      "source_chunk_files": [
+        "data\\semantic_chunks\\paper1_semantic_500.json",
+        "data\\semantic_chunks\\paper2_semantic_500.json",
+        "data\\semantic_chunks\\paper3_semantic_500.json",
+        "data\\semantic_chunks\\paper4_semantic_500.json",
+        "data\\semantic_chunks\\paper5_semantic_500.json"
+      ],
+      "source_file_hashes": {
+        "data\\semantic_chunks\\paper1_semantic_500.json": "9ded1b4b1099b72e07719b453beadfb4002ebb009d39449553f2a84d91c44ef1",
+        "data\\semantic_chunks\\paper2_semantic_500.json": "0c96c6368f5eb916d5eaa417ad911c51cafaacc7a070d2b73697438005608355",
+        "data\\semantic_chunks\\paper3_semantic_500.json": "0bad9f5c373744ba281aeb9a4815c31a52b3f1b04f2120bb2a3f5b2f70d0a2a3",
+        "data\\semantic_chunks\\paper4_semantic_500.json": "4d3829bbf7fd01354ae4b66caf8575e49cd55959c1b3c85d18909b61b80db29e",
+        "data\\semantic_chunks\\paper5_semantic_500.json": "d24db9cee820f183ea1f04a90cbadfaf7eecc6e91dca299d8575df7e1b94fdaa"
+      },
+      "source_documents": [
+        "paper1.txt",
+        "paper2.txt",
+        "paper3.txt",
+        "paper4.txt",
+        "paper5.txt"
+      ],
+      "number_of_chunks": 4484,
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_dimension": 384,
+      "embedding_processing_time_seconds": 229.707067499985,
+      "vector_store": "ChromaDB",
+      "index_build_time_seconds": 8.217351400002372,
+      "index_persistence_status": "built_and_persisted",
+      "index_info": {
+        "collection_name": "exp-4b9a86c7-bge-e07167d33ef28563463c470535b85407",
+        "persist_directory": "C:\\Users\\HP\\Desktop\\project-6-rag-comparison\\indexes\\chroma",
+        "index_id": "e07167d33ef28563463c470535b854077f8dbf30df7be20caf22190ccca100ed",
+        "retrieval_embedding_model": "BAAI/bge-small-en-v1.5",
+        "embedding_dimension": 384,
+        "strategy": "semantic",
+        "chunking_configuration": {
+          "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+          "min_size": 150,
+          "overlap_sentences": 1,
+          "similarity_threshold": 0.25,
+          "target_size": 500
+        },
+        "corpus_fingerprint": "052d550582828f0e725023dae6bc81e827f7907014a147a02cb24f5ddb86bac7",
+        "chunk_count": 4484,
+        "similarity_metric": "cosine",
+        "indexing_time_seconds": 8.217351400002372,
+        "retrieval_latency_seconds": null
+      },
+      "index_path": null,
+      "collection_name": "exp-4b9a86c7-bge-e07167d33ef28563463c470535b85407",
+      "retrieval_status": "success",
+      "repeatability_status": "passed",
+      "warnings": [],
+      "status": "success"
+    },
+    {
+      "experiment_id": "semantic-12b5d6c48f0e-bge-chromadb",
+      "chunking_strategy": "semantic",
+      "chunking_configuration": {
+        "target_size": 1000,
+        "min_size": 300,
+        "similarity_threshold": 0.25,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "overlap_sentences": 1
+      },
+      "source_chunk_files": [
+        "data\\semantic_chunks\\paper1_semantic_1000.json",
+        "data\\semantic_chunks\\paper2_semantic_1000.json",
+        "data\\semantic_chunks\\paper3_semantic_1000.json",
+        "data\\semantic_chunks\\paper4_semantic_1000.json",
+        "data\\semantic_chunks\\paper5_semantic_1000.json"
+      ],
+      "source_file_hashes": {
+        "data\\semantic_chunks\\paper1_semantic_1000.json": "a1fb3b0872841710e8fc1a8e54e31d2cd0617538adcbd321fa81239f24a5ac9f",
+        "data\\semantic_chunks\\paper2_semantic_1000.json": "c6476717ff38df0420c5073c060870d1c66338fe4d3a3e4e194ead670012e3e1",
+        "data\\semantic_chunks\\paper3_semantic_1000.json": "4d4d0ecc7219c602e1a1d485dbbc93fef2a56ff80d3ed46fd1dfc45a465143b1",
+        "data\\semantic_chunks\\paper4_semantic_1000.json": "0f518250298d8f0ffc610d71e8be04c60534267e1fb6184df56860ae307a9a83",
+        "data\\semantic_chunks\\paper5_semantic_1000.json": "bb87095082edcbe7fbe95aea1b7e71c761ceb0672cb4078c0da6c2905f64c48f"
+      },
+      "source_documents": [
+        "paper1.txt",
+        "paper2.txt",
+        "paper3.txt",
+        "paper4.txt",
+        "paper5.txt"
+      ],
+      "number_of_chunks": 1879,
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_dimension": 384,
+      "embedding_processing_time_seconds": 193.55434850000893,
+      "vector_store": "ChromaDB",
+      "index_build_time_seconds": 6.230758700025035,
+      "index_persistence_status": "built_and_persisted",
+      "index_info": {
+        "collection_name": "exp-4b9a86c7-bge-93cd00e45e78d0a257f066bdbc44c90c",
+        "persist_directory": "C:\\Users\\HP\\Desktop\\project-6-rag-comparison\\indexes\\chroma",
+        "index_id": "93cd00e45e78d0a257f066bdbc44c90c9d6a2ae4a0fb451b77e28552221c0d7c",
+        "retrieval_embedding_model": "BAAI/bge-small-en-v1.5",
+        "embedding_dimension": 384,
+        "strategy": "semantic",
+        "chunking_configuration": {
+          "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+          "min_size": 300,
+          "overlap_sentences": 1,
+          "similarity_threshold": 0.25,
+          "target_size": 1000
+        },
+        "corpus_fingerprint": "ad31c8c1e2116b2d5faa0eec3c72b5cd567dc9d8fc7065a5cd16f212db3b779e",
+        "chunk_count": 1879,
+        "similarity_metric": "cosine",
+        "indexing_time_seconds": 6.230758700025035,
+        "retrieval_latency_seconds": null
+      },
+      "index_path": null,
+      "collection_name": "exp-4b9a86c7-bge-93cd00e45e78d0a257f066bdbc44c90c",
+      "retrieval_status": "success",
+      "repeatability_status": "passed",
+      "warnings": [],
+      "status": "success"
+    },
+    {
+      "experiment_id": "fixed_size-1b99619fab33-minilm-chromadb",
+      "chunking_strategy": "fixed_size",
+      "chunking_configuration": {
+        "chunk_size": 500,
+        "overlap": 50
+      },
+      "source_chunk_files": [
+        "data\\chunks\\paper1_fixed_500.json",
+        "data\\chunks\\paper2_fixed_500.json",
+        "data\\chunks\\paper3_fixed_500.json",
+        "data\\chunks\\paper4_fixed_500.json",
+        "data\\chunks\\paper5_fixed_500.json"
+      ],
+      "source_file_hashes": {
+        "data\\chunks\\paper1_fixed_500.json": "b8e2f3e7127c6030a02f591376d6ba13fc8e73d092ccfd1bb81214ef96dc9b26",
+        "data\\chunks\\paper2_fixed_500.json": "2070d3f2b1101f942fdf54f4447078752d454df19b2760ee516f0084d2504bdb",
+        "data\\chunks\\paper3_fixed_500.json": "c81e7d7994db2efd6c1423d71cb31c90957a60d3a72909ffd55de3e287c44f1d",
+        "data\\chunks\\paper4_fixed_500.json": "be7d1755d3e9619cc5f3c353f9459212aac1e85a7a53a6855a2e9f8c41f41f2b",
+        "data\\chunks\\paper5_fixed_500.json": "cb947f8d13301d6ad527597ff801f7a18e084b2050d32ca0c010a36668c921ec"
+      },
+      "source_documents": [
+        "paper1.txt",
+        "paper2.txt",
+        "paper3.txt",
+        "paper4.txt",
+        "paper5.txt"
+      ],
+      "number_of_chunks": 2376,
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "embedding_dimension": 384,
+      "embedding_processing_time_seconds": 65.70391129999189,
+      "vector_store": "ChromaDB",
+      "index_build_time_seconds": 5.4974634000100195,
+      "index_persistence_status": "built_and_persisted",
+      "index_info": {
+        "collection_name": "exp-4b9a86c7-minilm-51b1fc407872ec00742916d0f92b9b1d",
+        "persist_directory": "C:\\Users\\HP\\Desktop\\project-6-rag-comparison\\indexes\\chroma",
+        "index_id": "51b1fc407872ec00742916d0f92b9b1de69fdeb46711b437c4aee57c7a65c03c",
+        "retrieval_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "embedding_dimension": 384,
+        "strategy": "fixed_size",
+        "chunking_configuration": {
+          "chunk_size": 500,
+          "overlap": 50
+        },
+        "corpus_fingerprint": "b15be839721951e526883a5a6c0b6e6cdd77df5d2bced3f15d5daf55a33c1f7d",
+        "chunk_count": 2376,
+        "similarity_metric": "cosine",
+        "indexing_time_seconds": 5.4974634000100195,
+        "retrieval_latency_seconds": null
+      },
+      "index_path": null,
+      "collection_name": "exp-4b9a86c7-minilm-51b1fc407872ec00742916d0f92b9b1d",
+      "retrieval_status": "success",
+      "repeatability_status": "passed",
+      "warnings": [],
+      "status": "success"
+    },
+    {
+      "experiment_id": "fixed_size-ef63a9c4ad81-minilm-chromadb",
+      "chunking_strategy": "fixed_size",
+      "chunking_configuration": {
+        "chunk_size": 1000,
+        "overlap": 100
+      },
+      "source_chunk_files": [
+        "data\\chunks\\paper1_fixed_1000.json",
+        "data\\chunks\\paper2_fixed_1000.json",
+        "data\\chunks\\paper3_fixed_1000.json",
+        "data\\chunks\\paper4_fixed_1000.json",
+        "data\\chunks\\paper5_fixed_1000.json"
+      ],
+      "source_file_hashes": {
+        "data\\chunks\\paper1_fixed_1000.json": "7f4c08533f555aa2c1c2f5c4edff86e102453f97729e31c6bebbe5cc5a4a8777",
+        "data\\chunks\\paper2_fixed_1000.json": "4e22b700b546946f533e17f73047cf3c7a912c89ac745b6009cac09a00177383",
+        "data\\chunks\\paper3_fixed_1000.json": "7ef49236ccba01e997c08fc3c1c383dd03fbf9f94729aeb262ab0ce48ec046bd",
+        "data\\chunks\\paper4_fixed_1000.json": "85d529dae23e9370b49be488e4ea1bc1c3e0da1dde04d0fb13d78ef1b5552d98",
+        "data\\chunks\\paper5_fixed_1000.json": "a48d7a6eba75db0f5fc9e11fa5ab27a3264a421c9012e6d776b9f322ccc987e6"
+      },
+      "source_documents": [
+        "paper1.txt",
+        "paper2.txt",
+        "paper3.txt",
+        "paper4.txt",
+        "paper5.txt"
+      ],
+      "number_of_chunks": 1189,
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "embedding_dimension": 384,
+      "embedding_processing_time_seconds": 46.48490260000108,
+      "vector_store": "ChromaDB",
+      "index_build_time_seconds": 4.150665399996797,
+      "index_persistence_status": "built_and_persisted",
+      "index_info": {
+        "collection_name": "exp-4b9a86c7-minilm-1e95c020109a4a7975c9acdcee594d22",
+        "persist_directory": "C:\\Users\\HP\\Desktop\\project-6-rag-comparison\\indexes\\chroma",
+        "index_id": "1e95c020109a4a7975c9acdcee594d22f85840d3d3d719ba510717c087965aea",
+        "retrieval_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "embedding_dimension": 384,
+        "strategy": "fixed_size",
+        "chunking_configuration": {
+          "chunk_size": 1000,
+          "overlap": 100
+        },
+        "corpus_fingerprint": "e5cf252cf95a0dd0cfa4dac7da49c88ec4d125f0c44425a8914acd9ee54482d9",
+        "chunk_count": 1189,
+        "similarity_metric": "cosine",
+        "indexing_time_seconds": 4.150665399996797,
+        "retrieval_latency_seconds": null
+      },
+      "index_path": null,
+      "collection_name": "exp-4b9a86c7-minilm-1e95c020109a4a7975c9acdcee594d22",
+      "retrieval_status": "success",
+      "repeatability_status": "passed",
+      "warnings": [],
+      "status": "success"
+    },
+    {
+      "experiment_id": "sentence_level-78ee1b5fcf77-minilm-chromadb",
+      "chunking_strategy": "sentence_level",
+      "chunking_configuration": {
+        "target_size": 500,
+        "overlap_sentences": 1
+      },
+      "source_chunk_files": [
+        "data\\sentence_chunks\\paper1_sentence_500.json",
+        "data\\sentence_chunks\\paper2_sentence_500.json",
+        "data\\sentence_chunks\\paper3_sentence_500.json",
+        "data\\sentence_chunks\\paper4_sentence_500.json",
+        "data\\sentence_chunks\\paper5_sentence_500.json"
+      ],
+      "source_file_hashes": {
+        "data\\sentence_chunks\\paper1_sentence_500.json": "41faae0451b0ff90453e8cd0a02ae8863fa9bd39ff4b858b8b4d1b7ca7d70091",
+        "data\\sentence_chunks\\paper2_sentence_500.json": "0fc225b9c1105b9e5956581cabc7c9a91b0083950ae4542e10543edeb47e1875",
+        "data\\sentence_chunks\\paper3_sentence_500.json": "9cd7078e0deca293fdebd3cde07bc419cec145750d7004295007da8480934c56",
+        "data\\sentence_chunks\\paper4_sentence_500.json": "0b19a8df57c5a21c61390a58fa654e882359025a9cf3364bcd374656894f0db0",
+        "data\\sentence_chunks\\paper5_sentence_500.json": "723b8822d716dae6306997d894af3c22051415f6643c3d327c0530703cb438eb"
+      },
+      "source_documents": [
+        "paper1.txt",
+        "paper2.txt",
+        "paper3.txt",
+        "paper4.txt",
+        "paper5.txt"
+      ],
+      "number_of_chunks": 3776,
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "embedding_dimension": 384,
+      "embedding_processing_time_seconds": 86.69716529999278,
+      "vector_store": "ChromaDB",
+      "index_build_time_seconds": 9.029835900000762,
+      "index_persistence_status": "built_and_persisted",
+      "index_info": {
+        "collection_name": "exp-4b9a86c7-minilm-4a1c68063fc3ecca9923c9e6c8619991",
+        "persist_directory": "C:\\Users\\HP\\Desktop\\project-6-rag-comparison\\indexes\\chroma",
+        "index_id": "4a1c68063fc3ecca9923c9e6c8619991e5b35944cd6e91eb1aeb6a2ed21a57bc",
+        "retrieval_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "embedding_dimension": 384,
+        "strategy": "sentence_level",
+        "chunking_configuration": {
+          "overlap_sentences": 1,
+          "target_size": 500
+        },
+        "corpus_fingerprint": "89cc1fe0f9954270140f491883d1567699fb0ddcdbfccc54e96424da055d4199",
+        "chunk_count": 3776,
+        "similarity_metric": "cosine",
+        "indexing_time_seconds": 9.029835900000762,
+        "retrieval_latency_seconds": null
+      },
+      "index_path": null,
+      "collection_name": "exp-4b9a86c7-minilm-4a1c68063fc3ecca9923c9e6c8619991",
+      "retrieval_status": "success",
+      "repeatability_status": "passed",
+      "warnings": [],
+      "status": "success"
+    },
+    {
+      "experiment_id": "sentence_level-5dcc14f9d2d2-minilm-chromadb",
+      "chunking_strategy": "sentence_level",
+      "chunking_configuration": {
+        "target_size": 1000,
+        "overlap_sentences": 1
+      },
+      "source_chunk_files": [
+        "data\\sentence_chunks\\paper1_sentence_1000.json",
+        "data\\sentence_chunks\\paper2_sentence_1000.json",
+        "data\\sentence_chunks\\paper3_sentence_1000.json",
+        "data\\sentence_chunks\\paper4_sentence_1000.json",
+        "data\\sentence_chunks\\paper5_sentence_1000.json"
+      ],
+      "source_file_hashes": {
+        "data\\sentence_chunks\\paper1_sentence_1000.json": "7d3a9f11b312e4f636c67d563117a54cbff7f880ad61f790497c599c8cfe35d1",
+        "data\\sentence_chunks\\paper2_sentence_1000.json": "ed42890aa95d360f118026abe4cd8895e3768e02974e66dfcd512a7842f7ccd3",
+        "data\\sentence_chunks\\paper3_sentence_1000.json": "b19c1951118f95b1482608b1376f18c1896abaf1e83934232e4dbb085121847c",
+        "data\\sentence_chunks\\paper4_sentence_1000.json": "e72c08bbd94246f1049d9e0531402e033810009afce05b04df7e613845fda238",
+        "data\\sentence_chunks\\paper5_sentence_1000.json": "61bd3e59458467b442c9736a4338a34e11218aacfa677ad2e263b14067be720c"
+      },
+      "source_documents": [
+        "paper1.txt",
+        "paper2.txt",
+        "paper3.txt",
+        "paper4.txt",
+        "paper5.txt"
+      ],
+      "number_of_chunks": 1533,
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "embedding_dimension": 384,
+      "embedding_processing_time_seconds": 61.40228420001222,
+      "vector_store": "ChromaDB",
+      "index_build_time_seconds": 6.331919999996899,
+      "index_persistence_status": "built_and_persisted",
+      "index_info": {
+        "collection_name": "exp-4b9a86c7-minilm-1bb35a2f0aaf320f36fad0c452a80d2c",
+        "persist_directory": "C:\\Users\\HP\\Desktop\\project-6-rag-comparison\\indexes\\chroma",
+        "index_id": "1bb35a2f0aaf320f36fad0c452a80d2c305673c53675a24fff1fc6a796381e4d",
+        "retrieval_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "embedding_dimension": 384,
+        "strategy": "sentence_level",
+        "chunking_configuration": {
+          "overlap_sentences": 1,
+          "target_size": 1000
+        },
+        "corpus_fingerprint": "e950490429cd5c413a9428bd43870baa4d1895aeb7404ed2766f1f6e1cec9370",
+        "chunk_count": 1533,
+        "similarity_metric": "cosine",
+        "indexing_time_seconds": 6.331919999996899,
+        "retrieval_latency_seconds": null
+      },
+      "index_path": null,
+      "collection_name": "exp-4b9a86c7-minilm-1bb35a2f0aaf320f36fad0c452a80d2c",
+      "retrieval_status": "success",
+      "repeatability_status": "passed",
+      "warnings": [],
+      "status": "success"
+    },
+    {
+      "experiment_id": "semantic-5c7ea7dede30-minilm-chromadb",
+      "chunking_strategy": "semantic",
+      "chunking_configuration": {
+        "target_size": 500,
+        "min_size": 150,
+        "similarity_threshold": 0.25,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "overlap_sentences": 1
+      },
+      "source_chunk_files": [
+        "data\\semantic_chunks\\paper1_semantic_500.json",
+        "data\\semantic_chunks\\paper2_semantic_500.json",
+        "data\\semantic_chunks\\paper3_semantic_500.json",
+        "data\\semantic_chunks\\paper4_semantic_500.json",
+        "data\\semantic_chunks\\paper5_semantic_500.json"
+      ],
+      "source_file_hashes": {
+        "data\\semantic_chunks\\paper1_semantic_500.json": "9ded1b4b1099b72e07719b453beadfb4002ebb009d39449553f2a84d91c44ef1",
+        "data\\semantic_chunks\\paper2_semantic_500.json": "0c96c6368f5eb916d5eaa417ad911c51cafaacc7a070d2b73697438005608355",
+        "data\\semantic_chunks\\paper3_semantic_500.json": "0bad9f5c373744ba281aeb9a4815c31a52b3f1b04f2120bb2a3f5b2f70d0a2a3",
+        "data\\semantic_chunks\\paper4_semantic_500.json": "4d3829bbf7fd01354ae4b66caf8575e49cd55959c1b3c85d18909b61b80db29e",
+        "data\\semantic_chunks\\paper5_semantic_500.json": "d24db9cee820f183ea1f04a90cbadfaf7eecc6e91dca299d8575df7e1b94fdaa"
+      },
+      "source_documents": [
+        "paper1.txt",
+        "paper2.txt",
+        "paper3.txt",
+        "paper4.txt",
+        "paper5.txt"
+      ],
+      "number_of_chunks": 4484,
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "embedding_dimension": 384,
+      "embedding_processing_time_seconds": 99.02107680001063,
+      "vector_store": "ChromaDB",
+      "index_build_time_seconds": 9.648869299999205,
+      "index_persistence_status": "built_and_persisted",
+      "index_info": {
+        "collection_name": "exp-4b9a86c7-minilm-438c1e2972dd9102cdb2e39c3fd3aa10",
+        "persist_directory": "C:\\Users\\HP\\Desktop\\project-6-rag-comparison\\indexes\\chroma",
+        "index_id": "438c1e2972dd9102cdb2e39c3fd3aa10ba43d219bcefd7250b15668dba5bf426",
+        "retrieval_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "embedding_dimension": 384,
+        "strategy": "semantic",
+        "chunking_configuration": {
+          "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+          "min_size": 150,
+          "overlap_sentences": 1,
+          "similarity_threshold": 0.25,
+          "target_size": 500
+        },
+        "corpus_fingerprint": "7011f10d0807a9da51a098cf41ecd194a896208e803bdee9f5be3e08f977b400",
+        "chunk_count": 4484,
+        "similarity_metric": "cosine",
+        "indexing_time_seconds": 9.648869299999205,
+        "retrieval_latency_seconds": null
+      },
+      "index_path": null,
+      "collection_name": "exp-4b9a86c7-minilm-438c1e2972dd9102cdb2e39c3fd3aa10",
+      "retrieval_status": "success",
+      "repeatability_status": "passed",
+      "warnings": [],
+      "status": "success"
+    },
+    {
+      "experiment_id": "semantic-12b5d6c48f0e-minilm-chromadb",
+      "chunking_strategy": "semantic",
+      "chunking_configuration": {
+        "target_size": 1000,
+        "min_size": 300,
+        "similarity_threshold": 0.25,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "overlap_sentences": 1
+      },
+      "source_chunk_files": [
+        "data\\semantic_chunks\\paper1_semantic_1000.json",
+        "data\\semantic_chunks\\paper2_semantic_1000.json",
+        "data\\semantic_chunks\\paper3_semantic_1000.json",
+        "data\\semantic_chunks\\paper4_semantic_1000.json",
+        "data\\semantic_chunks\\paper5_semantic_1000.json"
+      ],
+      "source_file_hashes": {
+        "data\\semantic_chunks\\paper1_semantic_1000.json": "a1fb3b0872841710e8fc1a8e54e31d2cd0617538adcbd321fa81239f24a5ac9f",
+        "data\\semantic_chunks\\paper2_semantic_1000.json": "c6476717ff38df0420c5073c060870d1c66338fe4d3a3e4e194ead670012e3e1",
+        "data\\semantic_chunks\\paper3_semantic_1000.json": "4d4d0ecc7219c602e1a1d485dbbc93fef2a56ff80d3ed46fd1dfc45a465143b1",
+        "data\\semantic_chunks\\paper4_semantic_1000.json": "0f518250298d8f0ffc610d71e8be04c60534267e1fb6184df56860ae307a9a83",
+        "data\\semantic_chunks\\paper5_semantic_1000.json": "bb87095082edcbe7fbe95aea1b7e71c761ceb0672cb4078c0da6c2905f64c48f"
+      },
+      "source_documents": [
+        "paper1.txt",
+        "paper2.txt",
+        "paper3.txt",
+        "paper4.txt",
+        "paper5.txt"
+      ],
+      "number_of_chunks": 1879,
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "embedding_dimension": 384,
+      "embedding_processing_time_seconds": 79.54337589998613,
+      "vector_store": "ChromaDB",
+      "index_build_time_seconds": 3.987156599992886,
+      "index_persistence_status": "built_and_persisted",
+      "index_info": {
+        "collection_name": "exp-4b9a86c7-minilm-e0a7255ed2d23e8e7c35d34471237640",
+        "persist_directory": "C:\\Users\\HP\\Desktop\\project-6-rag-comparison\\indexes\\chroma",
+        "index_id": "e0a7255ed2d23e8e7c35d34471237640c23a0ba3c8e097d6847849940a7c34c7",
+        "retrieval_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "embedding_dimension": 384,
+        "strategy": "semantic",
+        "chunking_configuration": {
+          "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+          "min_size": 300,
+          "overlap_sentences": 1,
+          "similarity_threshold": 0.25,
+          "target_size": 1000
+        },
+        "corpus_fingerprint": "f5ff4ddf225b11271d15e5921cfa84a566c78f73222ff76f11aea6ef46c03363",
+        "chunk_count": 1879,
+        "similarity_metric": "cosine",
+        "indexing_time_seconds": 3.987156599992886,
+        "retrieval_latency_seconds": null
+      },
+      "index_path": null,
+      "collection_name": "exp-4b9a86c7-minilm-e0a7255ed2d23e8e7c35d34471237640",
+      "retrieval_status": "success",
+      "repeatability_status": "passed",
+      "warnings": [],
+      "status": "success"
+    }
+  ],
+  "completed_at_utc": "2026-11-15T07:35:41.514565+00:00",
+  "successful_configurations": 12,
+  "failed_configurations": 0
+}

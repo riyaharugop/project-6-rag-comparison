@@ -1,0 +1,1148 @@
+{
+  "interpretation": "This experiment validates retrieval behavior and reproducibility, not retrieval quality. No relevance labels or answer-generation outputs were available. Similarity scores are not quality metrics.",
+  "chunk_id_comparison_note": "Top-k ID overlap is compared only when chunking configuration and source-file hashes match. IDs from different chunking configurations are configuration-specific; inspect retrieval_results.jsonl for their ranked IDs rather than interpreting cross-configuration overlap as a quality measure.",
+  "configuration_metrics": [
+    {
+      "experiment_id": "fixed_size-1b99619fab33-bge-chromadb",
+      "chunking_strategy": "fixed_size",
+      "chunking_configuration": {
+        "chunk_size": 500,
+        "overlap": 50
+      },
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "vector_store": "ChromaDB",
+      "number_of_chunks": 2376,
+      "index_build_time_seconds": 3.6641081999987364,
+      "mean_retrieval_latency_seconds": 0.0447974999959115,
+      "median_retrieval_latency_seconds": 0.04066969998530112,
+      "similarity_score_distribution": {
+        "count": 25,
+        "min": 0.7077603936195374,
+        "mean": 0.7933360052108764,
+        "median": 0.8023443818092346,
+        "max": 0.8753188848495483
+      }
+    },
+    {
+      "experiment_id": "fixed_size-ef63a9c4ad81-bge-chromadb",
+      "chunking_strategy": "fixed_size",
+      "chunking_configuration": {
+        "chunk_size": 1000,
+        "overlap": 100
+      },
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "vector_store": "ChromaDB",
+      "number_of_chunks": 1189,
+      "index_build_time_seconds": 1.5492042000114452,
+      "mean_retrieval_latency_seconds": 0.06898860000655986,
+      "median_retrieval_latency_seconds": 0.04945640001096763,
+      "similarity_score_distribution": {
+        "count": 25,
+        "min": 0.6993143558502197,
+        "mean": 0.785473861694336,
+        "median": 0.7983771562576294,
+        "max": 0.8689216375350952
+      }
+    },
+    {
+      "experiment_id": "sentence_level-78ee1b5fcf77-bge-chromadb",
+      "chunking_strategy": "sentence_level",
+      "chunking_configuration": {
+        "target_size": 500,
+        "overlap_sentences": 1
+      },
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "vector_store": "ChromaDB",
+      "number_of_chunks": 3776,
+      "index_build_time_seconds": 4.95162789997994,
+      "mean_retrieval_latency_seconds": 0.061559380003018305,
+      "median_retrieval_latency_seconds": 0.06093810001038946,
+      "similarity_score_distribution": {
+        "count": 25,
+        "min": 0.7162744998931885,
+        "mean": 0.8084465980529785,
+        "median": 0.8216108083724976,
+        "max": 0.8674830198287964
+      }
+    },
+    {
+      "experiment_id": "sentence_level-5dcc14f9d2d2-bge-chromadb",
+      "chunking_strategy": "sentence_level",
+      "chunking_configuration": {
+        "target_size": 1000,
+        "overlap_sentences": 1
+      },
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "vector_store": "ChromaDB",
+      "number_of_chunks": 1533,
+      "index_build_time_seconds": 2.0556326000078116,
+      "mean_retrieval_latency_seconds": 0.061254159995587545,
+      "median_retrieval_latency_seconds": 0.05195229998207651,
+      "similarity_score_distribution": {
+        "count": 25,
+        "min": 0.7088690400123596,
+        "mean": 0.8031779384613037,
+        "median": 0.8116555213928223,
+        "max": 0.8838924765586853
+      }
+    },
+    {
+      "experiment_id": "semantic-5c7ea7dede30-bge-chromadb",
+      "chunking_strategy": "semantic",
+      "chunking_configuration": {
+        "target_size": 500,
+        "min_size": 150,
+        "similarity_threshold": 0.25,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "overlap_sentences": 1
+      },
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "vector_store": "ChromaDB",
+      "number_of_chunks": 4484,
+      "index_build_time_seconds": 8.217351400002372,
+      "mean_retrieval_latency_seconds": 0.04851080000516959,
+      "median_retrieval_latency_seconds": 0.050037500011967495,
+      "similarity_score_distribution": {
+        "count": 25,
+        "min": 0.7162744998931885,
+        "mean": 0.808284695148468,
+        "median": 0.8216108083724976,
+        "max": 0.8674830198287964
+      }
+    },
+    {
+      "experiment_id": "semantic-12b5d6c48f0e-bge-chromadb",
+      "chunking_strategy": "semantic",
+      "chunking_configuration": {
+        "target_size": 1000,
+        "min_size": 300,
+        "similarity_threshold": 0.25,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "overlap_sentences": 1
+      },
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "vector_store": "ChromaDB",
+      "number_of_chunks": 1879,
+      "index_build_time_seconds": 6.230758700025035,
+      "mean_retrieval_latency_seconds": 0.04818686000071466,
+      "median_retrieval_latency_seconds": 0.04776960000162944,
+      "similarity_score_distribution": {
+        "count": 25,
+        "min": 0.708158552646637,
+        "mean": 0.8035960602760315,
+        "median": 0.8178949952125549,
+        "max": 0.8741961717605591
+      }
+    },
+    {
+      "experiment_id": "fixed_size-1b99619fab33-bge-faiss",
+      "chunking_strategy": "fixed_size",
+      "chunking_configuration": {
+        "chunk_size": 500,
+        "overlap": 50
+      },
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "vector_store": "FAISS",
+      "number_of_chunks": 2376,
+      "index_build_time_seconds": 0.9079524999833666,
+      "mean_retrieval_latency_seconds": 0.03616434000432491,
+      "median_retrieval_latency_seconds": 0.03808190001291223,
+      "similarity_score_distribution": {
+        "count": 25,
+        "min": 0.7077602744102478,
+        "mean": 0.7933359694480896,
+        "median": 0.802344560623169,
+        "max": 0.8753189444541931
+      }
+    },
+    {
+      "experiment_id": "fixed_size-ef63a9c4ad81-bge-faiss",
+      "chunking_strategy": "fixed_size",
+      "chunking_configuration": {
+        "chunk_size": 1000,
+        "overlap": 100
+      },
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "vector_store": "FAISS",
+      "number_of_chunks": 1189,
+      "index_build_time_seconds": 0.536831399978837,
+      "mean_retrieval_latency_seconds": 0.04997437999118119,
+      "median_retrieval_latency_seconds": 0.04203439998673275,
+      "similarity_score_distribution": {
+        "count": 25,
+        "min": 0.6993141174316406,
+        "mean": 0.7854738187789917,
+        "median": 0.7983771562576294,
+        "max": 0.8689216375350952
+      }
+    },
+    {
+      "experiment_id": "sentence_level-78ee1b5fcf77-bge-faiss",
+      "chunking_strategy": "sentence_level",
+      "chunking_configuration": {
+        "target_size": 500,
+        "overlap_sentences": 1
+      },
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "vector_store": "FAISS",
+      "number_of_chunks": 3776,
+      "index_build_time_seconds": 1.7752843000052962,
+      "mean_retrieval_latency_seconds": 0.04106494000297971,
+      "median_retrieval_latency_seconds": 0.04124950000550598,
+      "similarity_score_distribution": {
+        "count": 25,
+        "min": 0.7162742018699646,
+        "mean": 0.8084465408325195,
+        "median": 0.8216109871864319,
+        "max": 0.8674830198287964
+      }
+    },
+    {
+      "experiment_id": "sentence_level-5dcc14f9d2d2-bge-faiss",
+      "chunking_strategy": "sentence_level",
+      "chunking_configuration": {
+        "target_size": 1000,
+        "overlap_sentences": 1
+      },
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "vector_store": "FAISS",
+      "number_of_chunks": 1533,
+      "index_build_time_seconds": 0.7558220000064466,
+      "mean_retrieval_latency_seconds": 0.03847055999794975,
+      "median_retrieval_latency_seconds": 0.03930709999985993,
+      "similarity_score_distribution": {
+        "count": 25,
+        "min": 0.7088689804077148,
+        "mean": 0.8031779408454895,
+        "median": 0.8116554617881775,
+        "max": 0.8838926553726196
+      }
+    },
+    {
+      "experiment_id": "semantic-5c7ea7dede30-bge-faiss",
+      "chunking_strategy": "semantic",
+      "chunking_configuration": {
+        "target_size": 500,
+        "min_size": 150,
+        "similarity_threshold": 0.25,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "overlap_sentences": 1
+      },
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "vector_store": "FAISS",
+      "number_of_chunks": 4484,
+      "index_build_time_seconds": 3.4490944999852218,
+      "mean_retrieval_latency_seconds": 0.03273208000464365,
+      "median_retrieval_latency_seconds": 0.02959349998855032,
+      "similarity_score_distribution": {
+        "count": 25,
+        "min": 0.7162742018699646,
+        "mean": 0.8082846236228943,
+        "median": 0.8216109871864319,
+        "max": 0.8674830198287964
+      }
+    },
+    {
+      "experiment_id": "semantic-12b5d6c48f0e-bge-faiss",
+      "chunking_strategy": "semantic",
+      "chunking_configuration": {
+        "target_size": 1000,
+        "min_size": 300,
+        "similarity_threshold": 0.25,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "overlap_sentences": 1
+      },
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "vector_store": "FAISS",
+      "number_of_chunks": 1879,
+      "index_build_time_seconds": 1.7953037999977823,
+      "mean_retrieval_latency_seconds": 0.04923870000056922,
+      "median_retrieval_latency_seconds": 0.03790520000620745,
+      "similarity_score_distribution": {
+        "count": 25,
+        "min": 0.7081583142280579,
+        "mean": 0.8035960483551026,
+        "median": 0.8178949952125549,
+        "max": 0.8741962909698486
+      }
+    },
+    {
+      "experiment_id": "fixed_size-1b99619fab33-minilm-chromadb",
+      "chunking_strategy": "fixed_size",
+      "chunking_configuration": {
+        "chunk_size": 500,
+        "overlap": 50
+      },
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "vector_store": "ChromaDB",
+      "number_of_chunks": 2376,
+      "index_build_time_seconds": 5.4974634000100195,
+      "mean_retrieval_latency_seconds": 0.03439677999704145,
+      "median_retrieval_latency_seconds": 0.023383599997032434,
+      "similarity_score_distribution": {
+        "count": 25,
+        "min": 0.6256324052810669,
+        "mean": 0.7335552549362183,
+        "median": 0.7242496013641357,
+        "max": 0.834965169429779
+      }
+    },
+    {
+      "experiment_id": "fixed_size-ef63a9c4ad81-minilm-chromadb",
+      "chunking_strategy": "fixed_size",
+      "chunking_configuration": {
+        "chunk_size": 1000,
+        "overlap": 100
+      },
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "vector_store": "ChromaDB",
+      "number_of_chunks": 1189,
+      "index_build_time_seconds": 4.150665399996797,
+      "mean_retrieval_latency_seconds": 0.02260727999964729,
+      "median_retrieval_latency_seconds": 0.02220609999494627,
+      "similarity_score_distribution": {
+        "count": 25,
+        "min": 0.6329498887062073,
+        "mean": 0.7369452857971192,
+        "median": 0.7366507649421692,
+        "max": 0.8150820732116699
+      }
+    },
+    {
+      "experiment_id": "sentence_level-78ee1b5fcf77-minilm-chromadb",
+      "chunking_strategy": "sentence_level",
+      "chunking_configuration": {
+        "target_size": 500,
+        "overlap_sentences": 1
+      },
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "vector_store": "ChromaDB",
+      "number_of_chunks": 3776,
+      "index_build_time_seconds": 9.029835900000762,
+      "mean_retrieval_latency_seconds": 0.030385740008205174,
+      "median_retrieval_latency_seconds": 0.02909110000473447,
+      "similarity_score_distribution": {
+        "count": 25,
+        "min": 0.6198921799659729,
+        "mean": 0.7454516863822938,
+        "median": 0.7428902387619019,
+        "max": 0.8258768320083618
+      }
+    },
+    {
+      "experiment_id": "sentence_level-5dcc14f9d2d2-minilm-chromadb",
+      "chunking_strategy": "sentence_level",
+      "chunking_configuration": {
+        "target_size": 1000,
+        "overlap_sentences": 1
+      },
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "vector_store": "ChromaDB",
+      "number_of_chunks": 1533,
+      "index_build_time_seconds": 6.331919999996899,
+      "mean_retrieval_latency_seconds": 0.024996360001387073,
+      "median_retrieval_latency_seconds": 0.024694499996257946,
+      "similarity_score_distribution": {
+        "count": 25,
+        "min": 0.6310346722602844,
+        "mean": 0.755182626247406,
+        "median": 0.7517437934875488,
+        "max": 0.8516436815261841
+      }
+    },
+    {
+      "experiment_id": "semantic-5c7ea7dede30-minilm-chromadb",
+      "chunking_strategy": "semantic",
+      "chunking_configuration": {
+        "target_size": 500,
+        "min_size": 150,
+        "similarity_threshold": 0.25,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "overlap_sentences": 1
+      },
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "vector_store": "ChromaDB",
+      "number_of_chunks": 4484,
+      "index_build_time_seconds": 9.648869299999205,
+      "mean_retrieval_latency_seconds": 0.029322700010379777,
+      "median_retrieval_latency_seconds": 0.02965900002163835,
+      "similarity_score_distribution": {
+        "count": 25,
+        "min": 0.6260740160942078,
+        "mean": 0.7460457158088684,
+        "median": 0.7428902387619019,
+        "max": 0.8258768320083618
+      }
+    },
+    {
+      "experiment_id": "semantic-12b5d6c48f0e-minilm-chromadb",
+      "chunking_strategy": "semantic",
+      "chunking_configuration": {
+        "target_size": 1000,
+        "min_size": 300,
+        "similarity_threshold": 0.25,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "overlap_sentences": 1
+      },
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "vector_store": "ChromaDB",
+      "number_of_chunks": 1879,
+      "index_build_time_seconds": 3.987156599992886,
+      "mean_retrieval_latency_seconds": 0.031811880000168456,
+      "median_retrieval_latency_seconds": 0.03185639998991974,
+      "similarity_score_distribution": {
+        "count": 25,
+        "min": 0.6310346722602844,
+        "mean": 0.747296621799469,
+        "median": 0.7511131763458252,
+        "max": 0.838605523109436
+      }
+    },
+    {
+      "experiment_id": "fixed_size-1b99619fab33-minilm-faiss",
+      "chunking_strategy": "fixed_size",
+      "chunking_configuration": {
+        "chunk_size": 500,
+        "overlap": 50
+      },
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "vector_store": "FAISS",
+      "number_of_chunks": 2376,
+      "index_build_time_seconds": 2.082962199987378,
+      "mean_retrieval_latency_seconds": 0.02909156000241637,
+      "median_retrieval_latency_seconds": 0.029020999994827434,
+      "similarity_score_distribution": {
+        "count": 25,
+        "min": 0.6256324648857117,
+        "mean": 0.7335551786422729,
+        "median": 0.7242496013641357,
+        "max": 0.8349649906158447
+      }
+    },
+    {
+      "experiment_id": "fixed_size-ef63a9c4ad81-minilm-faiss",
+      "chunking_strategy": "fixed_size",
+      "chunking_configuration": {
+        "chunk_size": 1000,
+        "overlap": 100
+      },
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "vector_store": "FAISS",
+      "number_of_chunks": 1189,
+      "index_build_time_seconds": 0.510210400010692,
+      "mean_retrieval_latency_seconds": 0.022622379998210818,
+      "median_retrieval_latency_seconds": 0.0231826999806799,
+      "similarity_score_distribution": {
+        "count": 25,
+        "min": 0.632949948310852,
+        "mean": 0.7369451808929444,
+        "median": 0.7366505861282349,
+        "max": 0.8150820732116699
+      }
+    },
+    {
+      "experiment_id": "sentence_level-78ee1b5fcf77-minilm-faiss",
+      "chunking_strategy": "sentence_level",
+      "chunking_configuration": {
+        "target_size": 500,
+        "overlap_sentences": 1
+      },
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "vector_store": "FAISS",
+      "number_of_chunks": 3776,
+      "index_build_time_seconds": 3.14124999998603,
+      "mean_retrieval_latency_seconds": 0.033399480005027724,
+      "median_retrieval_latency_seconds": 0.032658500014804304,
+      "similarity_score_distribution": {
+        "count": 25,
+        "min": 0.6198920011520386,
+        "mean": 0.7454516434669495,
+        "median": 0.7428901791572571,
+        "max": 0.8258766531944275
+      }
+    },
+    {
+      "experiment_id": "sentence_level-5dcc14f9d2d2-minilm-faiss",
+      "chunking_strategy": "sentence_level",
+      "chunking_configuration": {
+        "target_size": 1000,
+        "overlap_sentences": 1
+      },
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "vector_store": "FAISS",
+      "number_of_chunks": 1533,
+      "index_build_time_seconds": 0.7404933999932837,
+      "mean_retrieval_latency_seconds": 0.04075404000468552,
+      "median_retrieval_latency_seconds": 0.022526700020534918,
+      "similarity_score_distribution": {
+        "count": 25,
+        "min": 0.6310343146324158,
+        "mean": 0.7551825571060181,
+        "median": 0.7517437934875488,
+        "max": 0.851643443107605
+      }
+    },
+    {
+      "experiment_id": "semantic-5c7ea7dede30-minilm-faiss",
+      "chunking_strategy": "semantic",
+      "chunking_configuration": {
+        "target_size": 500,
+        "min_size": 150,
+        "similarity_threshold": 0.25,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "overlap_sentences": 1
+      },
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "vector_store": "FAISS",
+      "number_of_chunks": 4484,
+      "index_build_time_seconds": 2.354049599991413,
+      "mean_retrieval_latency_seconds": 0.026321240002289414,
+      "median_retrieval_latency_seconds": 0.026406299992231652,
+      "similarity_score_distribution": {
+        "count": 25,
+        "min": 0.626073956489563,
+        "mean": 0.7460456609725952,
+        "median": 0.7428901791572571,
+        "max": 0.8258766531944275
+      }
+    },
+    {
+      "experiment_id": "semantic-12b5d6c48f0e-minilm-faiss",
+      "chunking_strategy": "semantic",
+      "chunking_configuration": {
+        "target_size": 1000,
+        "min_size": 300,
+        "similarity_threshold": 0.25,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "overlap_sentences": 1
+      },
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "vector_store": "FAISS",
+      "number_of_chunks": 1879,
+      "index_build_time_seconds": 1.5134069000196178,
+      "mean_retrieval_latency_seconds": 0.03456942000193521,
+      "median_retrieval_latency_seconds": 0.03500900001381524,
+      "similarity_score_distribution": {
+        "count": 25,
+        "min": 0.6310343146324158,
+        "mean": 0.7472965192794799,
+        "median": 0.7511131763458252,
+        "max": 0.8386054039001465
+      }
+    }
+  ],
+  "retrieved_id_overlap_comparisons": [
+    {
+      "chunking_strategy": "fixed_size",
+      "chunking_configuration": {
+        "chunk_size": 500,
+        "overlap": 50
+      },
+      "left_embedding_model": "BAAI/bge-small-en-v1.5",
+      "right_embedding_model": "BAAI/bge-small-en-v1.5",
+      "left_vector_store": "ChromaDB",
+      "right_vector_store": "FAISS",
+      "left_experiment_id": "fixed_size-1b99619fab33-bge-chromadb",
+      "right_experiment_id": "fixed_size-1b99619fab33-bge-faiss",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 1.0,
+      "identical_ranked_list_fraction": 1.0
+    },
+    {
+      "chunking_strategy": "fixed_size",
+      "chunking_configuration": {
+        "chunk_size": 500,
+        "overlap": 50
+      },
+      "left_embedding_model": "BAAI/bge-small-en-v1.5",
+      "right_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "left_vector_store": "ChromaDB",
+      "right_vector_store": "ChromaDB",
+      "left_experiment_id": "fixed_size-1b99619fab33-bge-chromadb",
+      "right_experiment_id": "fixed_size-1b99619fab33-minilm-chromadb",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 0.3888888888888889,
+      "identical_ranked_list_fraction": 0.0
+    },
+    {
+      "chunking_strategy": "fixed_size",
+      "chunking_configuration": {
+        "chunk_size": 500,
+        "overlap": 50
+      },
+      "left_embedding_model": "BAAI/bge-small-en-v1.5",
+      "right_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "left_vector_store": "ChromaDB",
+      "right_vector_store": "FAISS",
+      "left_experiment_id": "fixed_size-1b99619fab33-bge-chromadb",
+      "right_experiment_id": "fixed_size-1b99619fab33-minilm-faiss",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 0.3888888888888889,
+      "identical_ranked_list_fraction": 0.0
+    },
+    {
+      "chunking_strategy": "fixed_size",
+      "chunking_configuration": {
+        "chunk_size": 1000,
+        "overlap": 100
+      },
+      "left_embedding_model": "BAAI/bge-small-en-v1.5",
+      "right_embedding_model": "BAAI/bge-small-en-v1.5",
+      "left_vector_store": "ChromaDB",
+      "right_vector_store": "FAISS",
+      "left_experiment_id": "fixed_size-ef63a9c4ad81-bge-chromadb",
+      "right_experiment_id": "fixed_size-ef63a9c4ad81-bge-faiss",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 1.0,
+      "identical_ranked_list_fraction": 1.0
+    },
+    {
+      "chunking_strategy": "fixed_size",
+      "chunking_configuration": {
+        "chunk_size": 1000,
+        "overlap": 100
+      },
+      "left_embedding_model": "BAAI/bge-small-en-v1.5",
+      "right_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "left_vector_store": "ChromaDB",
+      "right_vector_store": "ChromaDB",
+      "left_experiment_id": "fixed_size-ef63a9c4ad81-bge-chromadb",
+      "right_experiment_id": "fixed_size-ef63a9c4ad81-minilm-chromadb",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 0.3412698412698413,
+      "identical_ranked_list_fraction": 0.0
+    },
+    {
+      "chunking_strategy": "fixed_size",
+      "chunking_configuration": {
+        "chunk_size": 1000,
+        "overlap": 100
+      },
+      "left_embedding_model": "BAAI/bge-small-en-v1.5",
+      "right_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "left_vector_store": "ChromaDB",
+      "right_vector_store": "FAISS",
+      "left_experiment_id": "fixed_size-ef63a9c4ad81-bge-chromadb",
+      "right_experiment_id": "fixed_size-ef63a9c4ad81-minilm-faiss",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 0.3412698412698413,
+      "identical_ranked_list_fraction": 0.0
+    },
+    {
+      "chunking_strategy": "sentence_level",
+      "chunking_configuration": {
+        "target_size": 500,
+        "overlap_sentences": 1
+      },
+      "left_embedding_model": "BAAI/bge-small-en-v1.5",
+      "right_embedding_model": "BAAI/bge-small-en-v1.5",
+      "left_vector_store": "ChromaDB",
+      "right_vector_store": "FAISS",
+      "left_experiment_id": "sentence_level-78ee1b5fcf77-bge-chromadb",
+      "right_experiment_id": "sentence_level-78ee1b5fcf77-bge-faiss",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 1.0,
+      "identical_ranked_list_fraction": 1.0
+    },
+    {
+      "chunking_strategy": "sentence_level",
+      "chunking_configuration": {
+        "target_size": 500,
+        "overlap_sentences": 1
+      },
+      "left_embedding_model": "BAAI/bge-small-en-v1.5",
+      "right_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "left_vector_store": "ChromaDB",
+      "right_vector_store": "ChromaDB",
+      "left_experiment_id": "sentence_level-78ee1b5fcf77-bge-chromadb",
+      "right_experiment_id": "sentence_level-78ee1b5fcf77-minilm-chromadb",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 0.29365079365079366,
+      "identical_ranked_list_fraction": 0.0
+    },
+    {
+      "chunking_strategy": "sentence_level",
+      "chunking_configuration": {
+        "target_size": 500,
+        "overlap_sentences": 1
+      },
+      "left_embedding_model": "BAAI/bge-small-en-v1.5",
+      "right_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "left_vector_store": "ChromaDB",
+      "right_vector_store": "FAISS",
+      "left_experiment_id": "sentence_level-78ee1b5fcf77-bge-chromadb",
+      "right_experiment_id": "sentence_level-78ee1b5fcf77-minilm-faiss",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 0.29365079365079366,
+      "identical_ranked_list_fraction": 0.0
+    },
+    {
+      "chunking_strategy": "sentence_level",
+      "chunking_configuration": {
+        "target_size": 1000,
+        "overlap_sentences": 1
+      },
+      "left_embedding_model": "BAAI/bge-small-en-v1.5",
+      "right_embedding_model": "BAAI/bge-small-en-v1.5",
+      "left_vector_store": "ChromaDB",
+      "right_vector_store": "FAISS",
+      "left_experiment_id": "sentence_level-5dcc14f9d2d2-bge-chromadb",
+      "right_experiment_id": "sentence_level-5dcc14f9d2d2-bge-faiss",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 1.0,
+      "identical_ranked_list_fraction": 1.0
+    },
+    {
+      "chunking_strategy": "sentence_level",
+      "chunking_configuration": {
+        "target_size": 1000,
+        "overlap_sentences": 1
+      },
+      "left_embedding_model": "BAAI/bge-small-en-v1.5",
+      "right_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "left_vector_store": "ChromaDB",
+      "right_vector_store": "ChromaDB",
+      "left_experiment_id": "sentence_level-5dcc14f9d2d2-bge-chromadb",
+      "right_experiment_id": "sentence_level-5dcc14f9d2d2-minilm-chromadb",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 0.5,
+      "identical_ranked_list_fraction": 0.0
+    },
+    {
+      "chunking_strategy": "sentence_level",
+      "chunking_configuration": {
+        "target_size": 1000,
+        "overlap_sentences": 1
+      },
+      "left_embedding_model": "BAAI/bge-small-en-v1.5",
+      "right_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "left_vector_store": "ChromaDB",
+      "right_vector_store": "FAISS",
+      "left_experiment_id": "sentence_level-5dcc14f9d2d2-bge-chromadb",
+      "right_experiment_id": "sentence_level-5dcc14f9d2d2-minilm-faiss",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 0.5,
+      "identical_ranked_list_fraction": 0.0
+    },
+    {
+      "chunking_strategy": "semantic",
+      "chunking_configuration": {
+        "target_size": 500,
+        "min_size": 150,
+        "similarity_threshold": 0.25,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "overlap_sentences": 1
+      },
+      "left_embedding_model": "BAAI/bge-small-en-v1.5",
+      "right_embedding_model": "BAAI/bge-small-en-v1.5",
+      "left_vector_store": "ChromaDB",
+      "right_vector_store": "FAISS",
+      "left_experiment_id": "semantic-5c7ea7dede30-bge-chromadb",
+      "right_experiment_id": "semantic-5c7ea7dede30-bge-faiss",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 1.0,
+      "identical_ranked_list_fraction": 1.0
+    },
+    {
+      "chunking_strategy": "semantic",
+      "chunking_configuration": {
+        "target_size": 500,
+        "min_size": 150,
+        "similarity_threshold": 0.25,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "overlap_sentences": 1
+      },
+      "left_embedding_model": "BAAI/bge-small-en-v1.5",
+      "right_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "left_vector_store": "ChromaDB",
+      "right_vector_store": "ChromaDB",
+      "left_experiment_id": "semantic-5c7ea7dede30-bge-chromadb",
+      "right_experiment_id": "semantic-5c7ea7dede30-minilm-chromadb",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 0.26587301587301587,
+      "identical_ranked_list_fraction": 0.0
+    },
+    {
+      "chunking_strategy": "semantic",
+      "chunking_configuration": {
+        "target_size": 500,
+        "min_size": 150,
+        "similarity_threshold": 0.25,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "overlap_sentences": 1
+      },
+      "left_embedding_model": "BAAI/bge-small-en-v1.5",
+      "right_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "left_vector_store": "ChromaDB",
+      "right_vector_store": "FAISS",
+      "left_experiment_id": "semantic-5c7ea7dede30-bge-chromadb",
+      "right_experiment_id": "semantic-5c7ea7dede30-minilm-faiss",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 0.26587301587301587,
+      "identical_ranked_list_fraction": 0.0
+    },
+    {
+      "chunking_strategy": "semantic",
+      "chunking_configuration": {
+        "target_size": 1000,
+        "min_size": 300,
+        "similarity_threshold": 0.25,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "overlap_sentences": 1
+      },
+      "left_embedding_model": "BAAI/bge-small-en-v1.5",
+      "right_embedding_model": "BAAI/bge-small-en-v1.5",
+      "left_vector_store": "ChromaDB",
+      "right_vector_store": "FAISS",
+      "left_experiment_id": "semantic-12b5d6c48f0e-bge-chromadb",
+      "right_experiment_id": "semantic-12b5d6c48f0e-bge-faiss",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 1.0,
+      "identical_ranked_list_fraction": 1.0
+    },
+    {
+      "chunking_strategy": "semantic",
+      "chunking_configuration": {
+        "target_size": 1000,
+        "min_size": 300,
+        "similarity_threshold": 0.25,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "overlap_sentences": 1
+      },
+      "left_embedding_model": "BAAI/bge-small-en-v1.5",
+      "right_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "left_vector_store": "ChromaDB",
+      "right_vector_store": "ChromaDB",
+      "left_experiment_id": "semantic-12b5d6c48f0e-bge-chromadb",
+      "right_experiment_id": "semantic-12b5d6c48f0e-minilm-chromadb",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 0.4523809523809524,
+      "identical_ranked_list_fraction": 0.0
+    },
+    {
+      "chunking_strategy": "semantic",
+      "chunking_configuration": {
+        "target_size": 1000,
+        "min_size": 300,
+        "similarity_threshold": 0.25,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "overlap_sentences": 1
+      },
+      "left_embedding_model": "BAAI/bge-small-en-v1.5",
+      "right_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "left_vector_store": "ChromaDB",
+      "right_vector_store": "FAISS",
+      "left_experiment_id": "semantic-12b5d6c48f0e-bge-chromadb",
+      "right_experiment_id": "semantic-12b5d6c48f0e-minilm-faiss",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 0.4523809523809524,
+      "identical_ranked_list_fraction": 0.0
+    },
+    {
+      "chunking_strategy": "fixed_size",
+      "chunking_configuration": {
+        "chunk_size": 500,
+        "overlap": 50
+      },
+      "left_embedding_model": "BAAI/bge-small-en-v1.5",
+      "right_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "left_vector_store": "FAISS",
+      "right_vector_store": "ChromaDB",
+      "left_experiment_id": "fixed_size-1b99619fab33-bge-faiss",
+      "right_experiment_id": "fixed_size-1b99619fab33-minilm-chromadb",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 0.3888888888888889,
+      "identical_ranked_list_fraction": 0.0
+    },
+    {
+      "chunking_strategy": "fixed_size",
+      "chunking_configuration": {
+        "chunk_size": 500,
+        "overlap": 50
+      },
+      "left_embedding_model": "BAAI/bge-small-en-v1.5",
+      "right_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "left_vector_store": "FAISS",
+      "right_vector_store": "FAISS",
+      "left_experiment_id": "fixed_size-1b99619fab33-bge-faiss",
+      "right_experiment_id": "fixed_size-1b99619fab33-minilm-faiss",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 0.3888888888888889,
+      "identical_ranked_list_fraction": 0.0
+    },
+    {
+      "chunking_strategy": "fixed_size",
+      "chunking_configuration": {
+        "chunk_size": 1000,
+        "overlap": 100
+      },
+      "left_embedding_model": "BAAI/bge-small-en-v1.5",
+      "right_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "left_vector_store": "FAISS",
+      "right_vector_store": "ChromaDB",
+      "left_experiment_id": "fixed_size-ef63a9c4ad81-bge-faiss",
+      "right_experiment_id": "fixed_size-ef63a9c4ad81-minilm-chromadb",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 0.3412698412698413,
+      "identical_ranked_list_fraction": 0.0
+    },
+    {
+      "chunking_strategy": "fixed_size",
+      "chunking_configuration": {
+        "chunk_size": 1000,
+        "overlap": 100
+      },
+      "left_embedding_model": "BAAI/bge-small-en-v1.5",
+      "right_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "left_vector_store": "FAISS",
+      "right_vector_store": "FAISS",
+      "left_experiment_id": "fixed_size-ef63a9c4ad81-bge-faiss",
+      "right_experiment_id": "fixed_size-ef63a9c4ad81-minilm-faiss",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 0.3412698412698413,
+      "identical_ranked_list_fraction": 0.0
+    },
+    {
+      "chunking_strategy": "sentence_level",
+      "chunking_configuration": {
+        "target_size": 500,
+        "overlap_sentences": 1
+      },
+      "left_embedding_model": "BAAI/bge-small-en-v1.5",
+      "right_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "left_vector_store": "FAISS",
+      "right_vector_store": "ChromaDB",
+      "left_experiment_id": "sentence_level-78ee1b5fcf77-bge-faiss",
+      "right_experiment_id": "sentence_level-78ee1b5fcf77-minilm-chromadb",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 0.29365079365079366,
+      "identical_ranked_list_fraction": 0.0
+    },
+    {
+      "chunking_strategy": "sentence_level",
+      "chunking_configuration": {
+        "target_size": 500,
+        "overlap_sentences": 1
+      },
+      "left_embedding_model": "BAAI/bge-small-en-v1.5",
+      "right_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "left_vector_store": "FAISS",
+      "right_vector_store": "FAISS",
+      "left_experiment_id": "sentence_level-78ee1b5fcf77-bge-faiss",
+      "right_experiment_id": "sentence_level-78ee1b5fcf77-minilm-faiss",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 0.29365079365079366,
+      "identical_ranked_list_fraction": 0.0
+    },
+    {
+      "chunking_strategy": "sentence_level",
+      "chunking_configuration": {
+        "target_size": 1000,
+        "overlap_sentences": 1
+      },
+      "left_embedding_model": "BAAI/bge-small-en-v1.5",
+      "right_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "left_vector_store": "FAISS",
+      "right_vector_store": "ChromaDB",
+      "left_experiment_id": "sentence_level-5dcc14f9d2d2-bge-faiss",
+      "right_experiment_id": "sentence_level-5dcc14f9d2d2-minilm-chromadb",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 0.5,
+      "identical_ranked_list_fraction": 0.0
+    },
+    {
+      "chunking_strategy": "sentence_level",
+      "chunking_configuration": {
+        "target_size": 1000,
+        "overlap_sentences": 1
+      },
+      "left_embedding_model": "BAAI/bge-small-en-v1.5",
+      "right_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "left_vector_store": "FAISS",
+      "right_vector_store": "FAISS",
+      "left_experiment_id": "sentence_level-5dcc14f9d2d2-bge-faiss",
+      "right_experiment_id": "sentence_level-5dcc14f9d2d2-minilm-faiss",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 0.5,
+      "identical_ranked_list_fraction": 0.0
+    },
+    {
+      "chunking_strategy": "semantic",
+      "chunking_configuration": {
+        "target_size": 500,
+        "min_size": 150,
+        "similarity_threshold": 0.25,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "overlap_sentences": 1
+      },
+      "left_embedding_model": "BAAI/bge-small-en-v1.5",
+      "right_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "left_vector_store": "FAISS",
+      "right_vector_store": "ChromaDB",
+      "left_experiment_id": "semantic-5c7ea7dede30-bge-faiss",
+      "right_experiment_id": "semantic-5c7ea7dede30-minilm-chromadb",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 0.26587301587301587,
+      "identical_ranked_list_fraction": 0.0
+    },
+    {
+      "chunking_strategy": "semantic",
+      "chunking_configuration": {
+        "target_size": 500,
+        "min_size": 150,
+        "similarity_threshold": 0.25,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "overlap_sentences": 1
+      },
+      "left_embedding_model": "BAAI/bge-small-en-v1.5",
+      "right_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "left_vector_store": "FAISS",
+      "right_vector_store": "FAISS",
+      "left_experiment_id": "semantic-5c7ea7dede30-bge-faiss",
+      "right_experiment_id": "semantic-5c7ea7dede30-minilm-faiss",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 0.26587301587301587,
+      "identical_ranked_list_fraction": 0.0
+    },
+    {
+      "chunking_strategy": "semantic",
+      "chunking_configuration": {
+        "target_size": 1000,
+        "min_size": 300,
+        "similarity_threshold": 0.25,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "overlap_sentences": 1
+      },
+      "left_embedding_model": "BAAI/bge-small-en-v1.5",
+      "right_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "left_vector_store": "FAISS",
+      "right_vector_store": "ChromaDB",
+      "left_experiment_id": "semantic-12b5d6c48f0e-bge-faiss",
+      "right_experiment_id": "semantic-12b5d6c48f0e-minilm-chromadb",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 0.4523809523809524,
+      "identical_ranked_list_fraction": 0.0
+    },
+    {
+      "chunking_strategy": "semantic",
+      "chunking_configuration": {
+        "target_size": 1000,
+        "min_size": 300,
+        "similarity_threshold": 0.25,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "overlap_sentences": 1
+      },
+      "left_embedding_model": "BAAI/bge-small-en-v1.5",
+      "right_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "left_vector_store": "FAISS",
+      "right_vector_store": "FAISS",
+      "left_experiment_id": "semantic-12b5d6c48f0e-bge-faiss",
+      "right_experiment_id": "semantic-12b5d6c48f0e-minilm-faiss",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 0.4523809523809524,
+      "identical_ranked_list_fraction": 0.0
+    },
+    {
+      "chunking_strategy": "fixed_size",
+      "chunking_configuration": {
+        "chunk_size": 500,
+        "overlap": 50
+      },
+      "left_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "right_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "left_vector_store": "ChromaDB",
+      "right_vector_store": "FAISS",
+      "left_experiment_id": "fixed_size-1b99619fab33-minilm-chromadb",
+      "right_experiment_id": "fixed_size-1b99619fab33-minilm-faiss",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 1.0,
+      "identical_ranked_list_fraction": 1.0
+    },
+    {
+      "chunking_strategy": "fixed_size",
+      "chunking_configuration": {
+        "chunk_size": 1000,
+        "overlap": 100
+      },
+      "left_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "right_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "left_vector_store": "ChromaDB",
+      "right_vector_store": "FAISS",
+      "left_experiment_id": "fixed_size-ef63a9c4ad81-minilm-chromadb",
+      "right_experiment_id": "fixed_size-ef63a9c4ad81-minilm-faiss",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 1.0,
+      "identical_ranked_list_fraction": 1.0
+    },
+    {
+      "chunking_strategy": "sentence_level",
+      "chunking_configuration": {
+        "target_size": 500,
+        "overlap_sentences": 1
+      },
+      "left_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "right_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "left_vector_store": "ChromaDB",
+      "right_vector_store": "FAISS",
+      "left_experiment_id": "sentence_level-78ee1b5fcf77-minilm-chromadb",
+      "right_experiment_id": "sentence_level-78ee1b5fcf77-minilm-faiss",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 1.0,
+      "identical_ranked_list_fraction": 1.0
+    },
+    {
+      "chunking_strategy": "sentence_level",
+      "chunking_configuration": {
+        "target_size": 1000,
+        "overlap_sentences": 1
+      },
+      "left_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "right_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "left_vector_store": "ChromaDB",
+      "right_vector_store": "FAISS",
+      "left_experiment_id": "sentence_level-5dcc14f9d2d2-minilm-chromadb",
+      "right_experiment_id": "sentence_level-5dcc14f9d2d2-minilm-faiss",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 1.0,
+      "identical_ranked_list_fraction": 1.0
+    },
+    {
+      "chunking_strategy": "semantic",
+      "chunking_configuration": {
+        "target_size": 500,
+        "min_size": 150,
+        "similarity_threshold": 0.25,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "overlap_sentences": 1
+      },
+      "left_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "right_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "left_vector_store": "ChromaDB",
+      "right_vector_store": "FAISS",
+      "left_experiment_id": "semantic-5c7ea7dede30-minilm-chromadb",
+      "right_experiment_id": "semantic-5c7ea7dede30-minilm-faiss",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 1.0,
+      "identical_ranked_list_fraction": 1.0
+    },
+    {
+      "chunking_strategy": "semantic",
+      "chunking_configuration": {
+        "target_size": 1000,
+        "min_size": 300,
+        "similarity_threshold": 0.25,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "overlap_sentences": 1
+      },
+      "left_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "right_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "left_vector_store": "ChromaDB",
+      "right_vector_store": "FAISS",
+      "left_experiment_id": "semantic-12b5d6c48f0e-minilm-chromadb",
+      "right_experiment_id": "semantic-12b5d6c48f0e-minilm-faiss",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 1.0,
+      "identical_ranked_list_fraction": 1.0
+    }
+  ]
+}

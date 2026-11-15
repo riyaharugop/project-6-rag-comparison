@@ -1,0 +1,374 @@
+{
+  "interpretation": "This experiment validates retrieval behavior and reproducibility, not retrieval quality. No relevance labels or answer-generation outputs were available. Similarity scores are not quality metrics.",
+  "chunk_id_comparison_note": "Top-k ID overlap is compared only when chunking configuration and source-file hashes match. IDs from different chunking configurations are configuration-specific; inspect retrieval_results.jsonl for their ranked IDs rather than interpreting cross-configuration overlap as a quality measure.",
+  "configuration_metrics": [
+    {
+      "experiment_id": "fixed_size-1b99619fab33-bge-chromadb",
+      "chunking_strategy": "fixed_size",
+      "chunking_configuration": {
+        "chunk_size": 500,
+        "overlap": 50
+      },
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "vector_store": "ChromaDB",
+      "number_of_chunks": 2376,
+      "index_build_time_seconds": 3.6641081999987364,
+      "mean_retrieval_latency_seconds": 0.028982859989628195,
+      "median_retrieval_latency_seconds": 0.025440099998377264,
+      "similarity_score_distribution": {
+        "count": 25,
+        "min": 0.7077603936195374,
+        "mean": 0.7933360052108764,
+        "median": 0.8023443818092346,
+        "max": 0.8753188848495483
+      }
+    },
+    {
+      "experiment_id": "fixed_size-ef63a9c4ad81-bge-chromadb",
+      "chunking_strategy": "fixed_size",
+      "chunking_configuration": {
+        "chunk_size": 1000,
+        "overlap": 100
+      },
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "vector_store": "ChromaDB",
+      "number_of_chunks": 1189,
+      "index_build_time_seconds": 1.5492042000114452,
+      "mean_retrieval_latency_seconds": 0.02622504000319168,
+      "median_retrieval_latency_seconds": 0.024970099999336526,
+      "similarity_score_distribution": {
+        "count": 25,
+        "min": 0.6993143558502197,
+        "mean": 0.785473861694336,
+        "median": 0.7983771562576294,
+        "max": 0.8689216375350952
+      }
+    },
+    {
+      "experiment_id": "sentence_level-78ee1b5fcf77-bge-chromadb",
+      "chunking_strategy": "sentence_level",
+      "chunking_configuration": {
+        "target_size": 500,
+        "overlap_sentences": 1
+      },
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "vector_store": "ChromaDB",
+      "number_of_chunks": 3776,
+      "index_build_time_seconds": 4.95162789997994,
+      "mean_retrieval_latency_seconds": 0.03373049999936484,
+      "median_retrieval_latency_seconds": 0.02979209998738952,
+      "similarity_score_distribution": {
+        "count": 25,
+        "min": 0.7162744998931885,
+        "mean": 0.8084465980529785,
+        "median": 0.8216108083724976,
+        "max": 0.8674830198287964
+      }
+    },
+    {
+      "experiment_id": "sentence_level-5dcc14f9d2d2-bge-chromadb",
+      "chunking_strategy": "sentence_level",
+      "chunking_configuration": {
+        "target_size": 1000,
+        "overlap_sentences": 1
+      },
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "vector_store": "ChromaDB",
+      "number_of_chunks": 1533,
+      "index_build_time_seconds": 2.0556326000078116,
+      "mean_retrieval_latency_seconds": 0.025698379997629674,
+      "median_retrieval_latency_seconds": 0.025957300007576123,
+      "similarity_score_distribution": {
+        "count": 25,
+        "min": 0.7088690400123596,
+        "mean": 0.8031779384613037,
+        "median": 0.8116555213928223,
+        "max": 0.8838924765586853
+      }
+    },
+    {
+      "experiment_id": "semantic-5c7ea7dede30-bge-chromadb",
+      "chunking_strategy": "semantic",
+      "chunking_configuration": {
+        "target_size": 500,
+        "min_size": 150,
+        "similarity_threshold": 0.25,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "overlap_sentences": 1
+      },
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "vector_store": "ChromaDB",
+      "number_of_chunks": 4484,
+      "index_build_time_seconds": 8.217351400002372,
+      "mean_retrieval_latency_seconds": 0.03524905999656767,
+      "median_retrieval_latency_seconds": 0.030973999993875623,
+      "similarity_score_distribution": {
+        "count": 25,
+        "min": 0.7162744998931885,
+        "mean": 0.808284695148468,
+        "median": 0.8216108083724976,
+        "max": 0.8674830198287964
+      }
+    },
+    {
+      "experiment_id": "semantic-12b5d6c48f0e-bge-chromadb",
+      "chunking_strategy": "semantic",
+      "chunking_configuration": {
+        "target_size": 1000,
+        "min_size": 300,
+        "similarity_threshold": 0.25,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "overlap_sentences": 1
+      },
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "vector_store": "ChromaDB",
+      "number_of_chunks": 1879,
+      "index_build_time_seconds": 6.230758700025035,
+      "mean_retrieval_latency_seconds": 0.04134819998871535,
+      "median_retrieval_latency_seconds": 0.033486499974969774,
+      "similarity_score_distribution": {
+        "count": 25,
+        "min": 0.708158552646637,
+        "mean": 0.8035960602760315,
+        "median": 0.8178949952125549,
+        "max": 0.8741961717605591
+      }
+    },
+    {
+      "experiment_id": "fixed_size-1b99619fab33-minilm-chromadb",
+      "chunking_strategy": "fixed_size",
+      "chunking_configuration": {
+        "chunk_size": 500,
+        "overlap": 50
+      },
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "vector_store": "ChromaDB",
+      "number_of_chunks": 2376,
+      "index_build_time_seconds": 5.4974634000100195,
+      "mean_retrieval_latency_seconds": 0.027169259992660955,
+      "median_retrieval_latency_seconds": 0.02680349998991005,
+      "similarity_score_distribution": {
+        "count": 25,
+        "min": 0.6256324052810669,
+        "mean": 0.7335552549362183,
+        "median": 0.7242496013641357,
+        "max": 0.834965169429779
+      }
+    },
+    {
+      "experiment_id": "fixed_size-ef63a9c4ad81-minilm-chromadb",
+      "chunking_strategy": "fixed_size",
+      "chunking_configuration": {
+        "chunk_size": 1000,
+        "overlap": 100
+      },
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "vector_store": "ChromaDB",
+      "number_of_chunks": 1189,
+      "index_build_time_seconds": 4.150665399996797,
+      "mean_retrieval_latency_seconds": 0.033788359997561204,
+      "median_retrieval_latency_seconds": 0.023067400004947558,
+      "similarity_score_distribution": {
+        "count": 25,
+        "min": 0.6329498887062073,
+        "mean": 0.7369452857971192,
+        "median": 0.7366507649421692,
+        "max": 0.8150820732116699
+      }
+    },
+    {
+      "experiment_id": "sentence_level-78ee1b5fcf77-minilm-chromadb",
+      "chunking_strategy": "sentence_level",
+      "chunking_configuration": {
+        "target_size": 500,
+        "overlap_sentences": 1
+      },
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "vector_store": "ChromaDB",
+      "number_of_chunks": 3776,
+      "index_build_time_seconds": 9.029835900000762,
+      "mean_retrieval_latency_seconds": 0.03172202000278048,
+      "median_retrieval_latency_seconds": 0.02384650000021793,
+      "similarity_score_distribution": {
+        "count": 25,
+        "min": 0.6198921799659729,
+        "mean": 0.7454516863822938,
+        "median": 0.7428902387619019,
+        "max": 0.8258768320083618
+      }
+    },
+    {
+      "experiment_id": "sentence_level-5dcc14f9d2d2-minilm-chromadb",
+      "chunking_strategy": "sentence_level",
+      "chunking_configuration": {
+        "target_size": 1000,
+        "overlap_sentences": 1
+      },
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "vector_store": "ChromaDB",
+      "number_of_chunks": 1533,
+      "index_build_time_seconds": 6.331919999996899,
+      "mean_retrieval_latency_seconds": 0.02993052000529133,
+      "median_retrieval_latency_seconds": 0.0303536000137683,
+      "similarity_score_distribution": {
+        "count": 25,
+        "min": 0.6310346722602844,
+        "mean": 0.755182626247406,
+        "median": 0.7517437934875488,
+        "max": 0.8516436815261841
+      }
+    },
+    {
+      "experiment_id": "semantic-5c7ea7dede30-minilm-chromadb",
+      "chunking_strategy": "semantic",
+      "chunking_configuration": {
+        "target_size": 500,
+        "min_size": 150,
+        "similarity_threshold": 0.25,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "overlap_sentences": 1
+      },
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "vector_store": "ChromaDB",
+      "number_of_chunks": 4484,
+      "index_build_time_seconds": 9.648869299999205,
+      "mean_retrieval_latency_seconds": 0.030159320007078348,
+      "median_retrieval_latency_seconds": 0.025885900016874075,
+      "similarity_score_distribution": {
+        "count": 25,
+        "min": 0.6260740160942078,
+        "mean": 0.7460457158088684,
+        "median": 0.7428902387619019,
+        "max": 0.8258768320083618
+      }
+    },
+    {
+      "experiment_id": "semantic-12b5d6c48f0e-minilm-chromadb",
+      "chunking_strategy": "semantic",
+      "chunking_configuration": {
+        "target_size": 1000,
+        "min_size": 300,
+        "similarity_threshold": 0.25,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "overlap_sentences": 1
+      },
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "vector_store": "ChromaDB",
+      "number_of_chunks": 1879,
+      "index_build_time_seconds": 3.987156599992886,
+      "mean_retrieval_latency_seconds": 0.025449200003640725,
+      "median_retrieval_latency_seconds": 0.021011600008932874,
+      "similarity_score_distribution": {
+        "count": 25,
+        "min": 0.6310346722602844,
+        "mean": 0.747296621799469,
+        "median": 0.7511131763458252,
+        "max": 0.838605523109436
+      }
+    }
+  ],
+  "retrieved_id_overlap_comparisons": [
+    {
+      "chunking_strategy": "fixed_size",
+      "chunking_configuration": {
+        "chunk_size": 500,
+        "overlap": 50
+      },
+      "left_embedding_model": "BAAI/bge-small-en-v1.5",
+      "right_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "left_vector_store": "ChromaDB",
+      "right_vector_store": "ChromaDB",
+      "left_experiment_id": "fixed_size-1b99619fab33-bge-chromadb",
+      "right_experiment_id": "fixed_size-1b99619fab33-minilm-chromadb",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 0.3888888888888889,
+      "identical_ranked_list_fraction": 0.0
+    },
+    {
+      "chunking_strategy": "fixed_size",
+      "chunking_configuration": {
+        "chunk_size": 1000,
+        "overlap": 100
+      },
+      "left_embedding_model": "BAAI/bge-small-en-v1.5",
+      "right_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "left_vector_store": "ChromaDB",
+      "right_vector_store": "ChromaDB",
+      "left_experiment_id": "fixed_size-ef63a9c4ad81-bge-chromadb",
+      "right_experiment_id": "fixed_size-ef63a9c4ad81-minilm-chromadb",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 0.3412698412698413,
+      "identical_ranked_list_fraction": 0.0
+    },
+    {
+      "chunking_strategy": "sentence_level",
+      "chunking_configuration": {
+        "target_size": 500,
+        "overlap_sentences": 1
+      },
+      "left_embedding_model": "BAAI/bge-small-en-v1.5",
+      "right_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "left_vector_store": "ChromaDB",
+      "right_vector_store": "ChromaDB",
+      "left_experiment_id": "sentence_level-78ee1b5fcf77-bge-chromadb",
+      "right_experiment_id": "sentence_level-78ee1b5fcf77-minilm-chromadb",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 0.29365079365079366,
+      "identical_ranked_list_fraction": 0.0
+    },
+    {
+      "chunking_strategy": "sentence_level",
+      "chunking_configuration": {
+        "target_size": 1000,
+        "overlap_sentences": 1
+      },
+      "left_embedding_model": "BAAI/bge-small-en-v1.5",
+      "right_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "left_vector_store": "ChromaDB",
+      "right_vector_store": "ChromaDB",
+      "left_experiment_id": "sentence_level-5dcc14f9d2d2-bge-chromadb",
+      "right_experiment_id": "sentence_level-5dcc14f9d2d2-minilm-chromadb",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 0.5,
+      "identical_ranked_list_fraction": 0.0
+    },
+    {
+      "chunking_strategy": "semantic",
+      "chunking_configuration": {
+        "target_size": 500,
+        "min_size": 150,
+        "similarity_threshold": 0.25,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "overlap_sentences": 1
+      },
+      "left_embedding_model": "BAAI/bge-small-en-v1.5",
+      "right_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "left_vector_store": "ChromaDB",
+      "right_vector_store": "ChromaDB",
+      "left_experiment_id": "semantic-5c7ea7dede30-bge-chromadb",
+      "right_experiment_id": "semantic-5c7ea7dede30-minilm-chromadb",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 0.26587301587301587,
+      "identical_ranked_list_fraction": 0.0
+    },
+    {
+      "chunking_strategy": "semantic",
+      "chunking_configuration": {
+        "target_size": 1000,
+        "min_size": 300,
+        "similarity_threshold": 0.25,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "overlap_sentences": 1
+      },
+      "left_embedding_model": "BAAI/bge-small-en-v1.5",
+      "right_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "left_vector_store": "ChromaDB",
+      "right_vector_store": "ChromaDB",
+      "left_experiment_id": "semantic-12b5d6c48f0e-bge-chromadb",
+      "right_experiment_id": "semantic-12b5d6c48f0e-minilm-chromadb",
+      "shared_query_count": 5,
+      "mean_top_k_id_jaccard": 0.4523809523809524,
+      "identical_ranked_list_fraction": 0.0
+    }
+  ]
+}

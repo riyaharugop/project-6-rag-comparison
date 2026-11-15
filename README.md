@@ -96,6 +96,43 @@ one INFO retrieval record per search with a generated query ID, store name,
 model, top-k, ranked chunk IDs and scores, and elapsed time; raw query text is
 not logged.
 
+### Member 3 retrieval experiment
+
+Run `python -m src.member3.run_retrieval_experiment` from the repository root.
+The runner reuses the existing five-document JSON chunk outputs and does not
+regenerate chunks. It compares all six recorded chunk configurations: fixed
+500/50 and 1000/100, sentence-level 500/1 and 1000/1, and semantic 500/150/0.25/1
+and 1000/300/0.25/1 (target/minimum size, similarity threshold, overlap
+sentences). Semantic chunk records retain Member 2's boundary model metadata.
+
+The five-query set at `data/retrieval_experiment_queries.json` is synthetic,
+curated from the source-document topics, and has no relevance labels. BGE and
+MiniLM models are loaded once per run and reused across configurations. ChromaDB
+is used when available; FAISS results are included only when its native
+extension loads normally. OpenAI API calls are skipped unless credentials and
+the package are present and `--include-openai` is explicitly supplied; those
+calls may incur charges.
+
+Each run gets a unique directory under `results/retrieval_experiments/` so
+previous results are not overwritten. It contains:
+
+- `queries.json`: the exact query set used.
+- `retrieval_results.jsonl`: top-5 IDs, cosine scores, latency, repeatability,
+  configuration, and validation status for each query/configuration.
+- `configuration_summary.json`: source file hashes, actual chunk parameters,
+  indexed chunk counts, model dimensions, embedding/index timings, and
+  persistence/load and retrieval statuses.
+- `analysis.json`: latency and score distributions plus pairwise top-k ID
+  overlap only among results with matching chunking configuration and source
+  hashes (chunk IDs from different chunking configurations are not comparable).
+  It explicitly treats these as retrieval-behavior observations, not quality
+  measurements.
+
+Runs reuse a prior successful index only when its configuration and input-file
+hashes match. Repeated searches check result reproducibility. No Context Recall,
+Context Precision, Groundedness, or answer-quality metric is calculated because
+there are no relevance labels or generation outputs.
+
 ## 📁 Project Structure
 
 ```text
