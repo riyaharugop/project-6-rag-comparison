@@ -4,5 +4,6 @@ numpy
 pandas
 sentence-transformers
 faiss-cpu
+chromadb
 matplotlib
 openai
