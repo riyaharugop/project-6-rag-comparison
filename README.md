@@ -67,6 +67,17 @@ the latest call's model, dimension, elapsed time, and vector count through
 OpenAI embeddings require the `OPENAI_API_KEY` environment variable. The key is
 read at runtime; it should not be stored in source files.
 
+### Member 3 FAISS vector store
+
+`src/member3/vector_store.py` builds cosine-similarity indexes with normalized
+vectors and FAISS inner product. Indexes are separated by embedding model,
+chunking strategy/configuration, dimension, and a deterministic corpus
+fingerprint. Embedded records retain retrieval model and dimension provenance,
+separate from any semantic boundary model metadata. `FaissVectorStore` keeps
+chunk metadata in a JSON sidecar and saves indexes under the ignored `indexes/`
+directory by default. Pass the same embedding model to the store when loading
+or searching an index; searches default to five results.
+
 ## 📁 Project Structure
 
 ```text

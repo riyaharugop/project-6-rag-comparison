@@ -292,6 +292,7 @@ class EmbeddingTests(unittest.TestCase):
             "text": "chunk text",
             "start_index": 0,
             "end_index": 10,
+            "embedding_model": "semantic-boundary-model",
             "custom_metadata": {"section": "intro"},
         }
 
@@ -300,6 +301,12 @@ class EmbeddingTests(unittest.TestCase):
         self.assertEqual(embedded[0]["chunk_id"], chunk["chunk_id"])
         self.assertEqual(embedded[0]["custom_metadata"], chunk["custom_metadata"])
         self.assertEqual(embedded[0]["embedding"], [10.0, 1.0])
+        self.assertEqual(
+            embedded[0]["embedding_model"],
+            "semantic-boundary-model",
+        )
+        self.assertEqual(embedded[0]["retrieval_embedding_model"], "fake-model")
+        self.assertEqual(embedded[0]["embedding_dimension"], 2)
         self.assertNotIn("embedding", chunk)
 
     def test_sentence_chunk_schema_is_supported(self):
