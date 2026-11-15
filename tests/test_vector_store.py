@@ -162,6 +162,68 @@ class FaissVectorStoreTests(unittest.TestCase):
         self.assertTrue(all(-1.0 <= score <= 1.0 for score in scores))
         self.assertEqual(scores, sorted(scores, reverse=True))
 
+    def test_search_logs_required_fields_without_query_text(self):
+        from src.member3.embeddings import embed_chunk_records
+
+        with patch(
+            "src.member3.vector_store._load_faiss",
+            return_value=FakeFaissModule(),
+        ):
+            store = FaissVectorStore(self.embedding_model)
+            store.build_index(
+                embed_chunk_records(make_chunks(count=2), self.embedding_model)
+            )
+
+        with self.assertLogs("src.member3.vector_store", level="INFO") as captured:
+            results = store.search("search query", top_k=1)
+
+        self.assertEqual(len(captured.records), 1)
+        log_record = captured.records[0]
+        self.assertEqual(log_record.store_name, "FaissVectorStore")
+        self.assertTrue(log_record.query_id)
+        self.assertNotIn("search query", log_record.getMessage())
+        self.assertEqual(
+            log_record.chunk_ids,
+            [result["chunk_id"] for result in results],
+        )
+        self.assertEqual(
+            log_record.similarity_scores,
+            [result["similarity_score"] for result in results],
+        )
+        self.assertEqual(
+            log_record.embedding_model,
+            self.embedding_model.get_model_name(),
+        )
+        self.assertEqual(log_record.top_k, 1)
+        self.assertGreaterEqual(log_record.elapsed_seconds, 0.0)
+
+    def test_search_logs_empty_results(self):
+        from src.member3.embeddings import embed_chunk_records
+
+        class EmptySearchIndex(FakeIndexIDMap2):
+            def search(self, query, top_k):
+                return np.array([[-np.inf]]), np.array([[-1]], dtype=np.int64)
+
+        with patch(
+            "src.member3.vector_store._load_faiss",
+            return_value=FakeFaissModule(),
+        ):
+            store = FaissVectorStore(self.embedding_model)
+            store.build_index(
+                embed_chunk_records(make_chunks(count=1), self.embedding_model)
+            )
+        empty_index = EmptySearchIndex(FakeIndexFlatIP(3))
+        empty_index.ntotal = 1
+        store._index = empty_index
+
+        with self.assertLogs("src.member3.vector_store", level="INFO") as captured:
+            results = store.search("search query")
+
+        self.assertEqual(results, [])
+        self.assertEqual(len(captured.records), 1)
+        self.assertEqual(captured.records[0].chunk_ids, [])
+        self.assertEqual(captured.records[0].similarity_scores, [])
+
     def test_all_chunking_strategies_and_configurations_are_supported(self):
         from src.member3.embeddings import embed_chunk_records
 

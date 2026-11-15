@@ -78,6 +78,24 @@ chunk metadata in a JSON sidecar and saves indexes under the ignored `indexes/`
 directory by default. Pass the same embedding model to the store when loading
 or searching an index; searches default to five results.
 
+### Member 3 ChromaDB vector store
+
+`src/member3/chroma_store.py` provides a persistent ChromaDB backend using the
+same embedded chunk records and `EmbeddingModel` interface as FAISS. Document
+and query vectors are supplied explicitly, so ChromaDB does not select or apply
+its default embedding function. Collections are isolated by model, dimension,
+strategy/configuration, and corpus fingerprint. Nested chunk metadata is stored
+as JSON and restored in search results. ChromaDB cosine distances are converted
+to cosine similarity scores. Persistent collections are stored under the
+ignored `indexes/chroma/` directory by default; use `get_index_info()` to get
+the collection name and `load_index()` to reopen it. Collection builds remain
+marked `building` until the expected record count is verified; `load_index()`
+rejects incomplete or count-mismatched collections. `save_index()` requires a
+Chroma client whose settings report persistent storage. Both vector stores emit
+one INFO retrieval record per search with a generated query ID, store name,
+model, top-k, ranked chunk IDs and scores, and elapsed time; raw query text is
+not logged.
+
 ## 📁 Project Structure
 
 ```text

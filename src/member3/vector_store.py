@@ -2,9 +2,11 @@
 
 import hashlib
 import json
+import logging
 import os
 import re
 import tempfile
+import uuid
 from copy import deepcopy
 from pathlib import Path
 from time import perf_counter
@@ -36,6 +38,7 @@ _NON_CONFIGURATION_FIELDS = {
     "retrieval_embedding_model",
     "embedding_dimension",
 }
+_LOGGER = logging.getLogger(__name__)
 
 
 def _load_faiss() -> Any:
@@ -442,6 +445,8 @@ class FaissVectorStore:
             )
 
         started = perf_counter()
+        query_id = uuid.uuid4().hex
+        results: List[Dict[str, Any]] = []
         try:
             query_vector = np.asarray(
                 query_model.embed_query(query),
@@ -465,7 +470,6 @@ class FaissVectorStore:
                 np.ascontiguousarray(query_vector.reshape(1, -1)),
                 min(top_k, self._index.ntotal),
             )
-            results = []
             for rank, (score, faiss_id) in enumerate(
                 zip(scores[0], faiss_ids[0]),
                 start=1,
@@ -485,6 +489,20 @@ class FaissVectorStore:
             self._retrieval_latency_seconds = perf_counter() - started
             self._index_info["retrieval_latency_seconds"] = (
                 self._retrieval_latency_seconds
+            )
+            _LOGGER.info(
+                "retrieval completed",
+                extra={
+                    "store_name": "FaissVectorStore",
+                    "query_id": query_id,
+                    "chunk_ids": [result["chunk_id"] for result in results],
+                    "similarity_scores": [
+                        result["similarity_score"] for result in results
+                    ],
+                    "embedding_model": expected_model,
+                    "top_k": top_k,
+                    "elapsed_seconds": self._retrieval_latency_seconds,
+                },
             )
 
     def get_index_info(self) -> Dict[str, Any]:
