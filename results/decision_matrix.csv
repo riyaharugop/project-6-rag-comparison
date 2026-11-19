@@ -1,0 +1,6 @@
+Criterion,Preferred Configuration,Reason
+Maximum Context Recall,Fixed-size + BGE,Highest recall of 0.8039
+Maximum Context Precision,Semantic + MiniLM,Highest precision of 0.66
+Minimum Retrieval Latency,Fixed-size + MiniLM,Lowest latency of 0.0190 seconds
+Best Balanced Performance,Semantic + MiniLM,High precision with good recall and low latency
+Overall Recommendation,Semantic + MiniLM,Best balance across the three retrieval metrics

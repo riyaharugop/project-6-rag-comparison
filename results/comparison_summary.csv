@@ -1,0 +1,7 @@
+chunking_strategy,embedding_model,context_recall,context_precision,retrieval_latency_seconds,configuration
+fixed_size,BAAI/bge-small-en-v1.5,0.80388,0.55,0.02935648999919067,fixed size + bge-small-en-v1.5
+fixed_size,sentence-transformers/all-MiniLM-L6-v2,0.77235,0.53,0.01898686499989708,fixed size + all-MiniLM-L6-v2
+semantic,BAAI/bge-small-en-v1.5,0.78321,0.63,0.03171282000039355,semantic + bge-small-en-v1.5
+semantic,sentence-transformers/all-MiniLM-L6-v2,0.783105,0.6599999999999999,0.01910785000072792,semantic + all-MiniLM-L6-v2
+sentence_level,BAAI/bge-small-en-v1.5,0.747695,0.55,0.03412327999903937,sentence level + bge-small-en-v1.5
+sentence_level,sentence-transformers/all-MiniLM-L6-v2,0.79225,0.62,0.020308664998447058,sentence level + all-MiniLM-L6-v2

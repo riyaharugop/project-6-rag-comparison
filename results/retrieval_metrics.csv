@@ -1,0 +1,121 @@
+question,chunking_strategy,chunk_size,embedding_model,vector_store,top_k,context_recall,context_precision,retrieval_latency_seconds
+What is information security?,fixed_size,500,BAAI/bge-small-en-v1.5,FAISS,5,1.0,0.8,0.02244109999446664
+What are the three fundamental objectives of information security?,fixed_size,500,BAAI/bge-small-en-v1.5,FAISS,5,0.5652,0.2,0.030578000005334616
+What is the difference between data integrity and system integrity?,fixed_size,500,BAAI/bge-small-en-v1.5,FAISS,5,1.0,0.8,0.027216700007556938
+What are security controls?,fixed_size,500,BAAI/bge-small-en-v1.5,FAISS,5,1.0,1.0,0.02681060000031721
+What are the four steps in the NIST risk assessment process?,fixed_size,500,BAAI/bge-small-en-v1.5,FAISS,5,0.8235,0.2,0.028747000003932044
+What factors are considered when identifying adversarial threat sources?,fixed_size,500,BAAI/bge-small-en-v1.5,FAISS,5,1.0,0.8,0.03328640000836458
+How does NIST determine the risk associated with a threat event?,fixed_size,500,BAAI/bge-small-en-v1.5,FAISS,5,1.0,0.4,0.029022999995504506
+Why should organizations continuously monitor risk factors?,fixed_size,500,BAAI/bge-small-en-v1.5,FAISS,5,1.0,1.0,0.028364999991026707
+Which CSF 2.0 functions form the incident response activities in NIST SP 800-61 Rev. 3?,fixed_size,500,BAAI/bge-small-en-v1.5,FAISS,5,0.6957,0.6,0.03263489999517333
+What is the purpose of the preparation activities in incident response?,fixed_size,500,BAAI/bge-small-en-v1.5,FAISS,5,0.95,0.6,0.02901440000277944
+How does continuous improvement contribute to incident response?,fixed_size,500,BAAI/bge-small-en-v1.5,FAISS,5,0.7,0.6,0.029492399989976548
+Why should organizations consider incident response throughout cybersecurity risk management?,fixed_size,500,BAAI/bge-small-en-v1.5,FAISS,5,0.6087,0.8,0.03023869999742601
+What are the three assessment methods described in NIST SP 800-115?,fixed_size,500,BAAI/bge-small-en-v1.5,FAISS,5,0.2963,0.0,0.03180300000531133
+What are the three main phases of a technical security assessment?,fixed_size,500,BAAI/bge-small-en-v1.5,FAISS,5,0.4348,0.2,0.03017899999395013
+What is the purpose of vulnerability scanning?,fixed_size,500,BAAI/bge-small-en-v1.5,FAISS,5,0.7333,0.0,0.030709400001796894
+What should an organization address during security assessment planning?,fixed_size,500,BAAI/bge-small-en-v1.5,FAISS,5,0.7407,0.6,0.030731699996977113
+What is cyber threat information according to NIST SP 800-150?,fixed_size,500,BAAI/bge-small-en-v1.5,FAISS,5,0.5294,0.0,0.031790900000487454
+What types of information can be included in cyber threat information?,fixed_size,500,BAAI/bge-small-en-v1.5,FAISS,5,1.0,0.6,0.026960800008964725
+Why should organizations establish information sharing goals and objectives?,fixed_size,500,BAAI/bge-small-en-v1.5,FAISS,5,1.0,1.0,0.027589399993303232
+What should organizations identify when establishing internal cyber threat information sources?,fixed_size,500,BAAI/bge-small-en-v1.5,FAISS,5,1.0,0.8,0.029517399991163984
+What is information security?,fixed_size,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,0.9565,1.0,0.014126800000667572
+What are the three fundamental objectives of information security?,fixed_size,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,0.6087,0.2,0.02021789998980239
+What is the difference between data integrity and system integrity?,fixed_size,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,1.0,0.8,0.015765500007546507
+What are security controls?,fixed_size,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,0.7273,1.0,0.013024999992921948
+What are the four steps in the NIST risk assessment process?,fixed_size,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,0.8824,0.2,0.017073600000003353
+What factors are considered when identifying adversarial threat sources?,fixed_size,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,1.0,0.6,0.01922240000567399
+How does NIST determine the risk associated with a threat event?,fixed_size,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,0.6111,0.4,0.017845399997895584
+Why should organizations continuously monitor risk factors?,fixed_size,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,1.0,1.0,0.017325099994195625
+Which CSF 2.0 functions form the incident response activities in NIST SP 800-61 Rev. 3?,fixed_size,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,0.913,0.8,0.022570999994059093
+What is the purpose of the preparation activities in incident response?,fixed_size,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,0.5,0.2,0.017308399998000823
+How does continuous improvement contribute to incident response?,fixed_size,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,0.6,0.2,0.020549599998048507
+Why should organizations consider incident response throughout cybersecurity risk management?,fixed_size,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,1.0,0.4,0.021757199996500276
+What are the three assessment methods described in NIST SP 800-115?,fixed_size,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,0.4074,0.2,0.01934659999096766
+What are the three main phases of a technical security assessment?,fixed_size,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,0.3913,0.0,0.019229199999244884
+What is the purpose of vulnerability scanning?,fixed_size,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,0.7333,0.0,0.018958100001327693
+What should an organization address during security assessment planning?,fixed_size,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,0.7778,1.0,0.019477200010442175
+What is cyber threat information according to NIST SP 800-150?,fixed_size,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,0.5882,0.0,0.021171800006413832
+What types of information can be included in cyber threat information?,fixed_size,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,1.0,0.8,0.022751600001356564
+Why should organizations establish information sharing goals and objectives?,fixed_size,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,0.75,0.8,0.018966900010127574
+What should organizations identify when establishing internal cyber threat information sources?,fixed_size,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,1.0,1.0,0.02304800000274554
+What is information security?,sentence_level,500,BAAI/bge-small-en-v1.5,FAISS,5,1.0,0.8,0.019143700003041886
+What are the three fundamental objectives of information security?,sentence_level,500,BAAI/bge-small-en-v1.5,FAISS,5,0.2609,0.0,0.033562099997652695
+What is the difference between data integrity and system integrity?,sentence_level,500,BAAI/bge-small-en-v1.5,FAISS,5,1.0,1.0,0.02965810000023339
+What are security controls?,sentence_level,500,BAAI/bge-small-en-v1.5,FAISS,5,1.0,1.0,0.026736500003607944
+What are the four steps in the NIST risk assessment process?,sentence_level,500,BAAI/bge-small-en-v1.5,FAISS,5,0.5882,0.0,0.0923173999908613
+What factors are considered when identifying adversarial threat sources?,sentence_level,500,BAAI/bge-small-en-v1.5,FAISS,5,1.0,0.6,0.02953880000859499
+How does NIST determine the risk associated with a threat event?,sentence_level,500,BAAI/bge-small-en-v1.5,FAISS,5,0.6667,0.4,0.03153700000257231
+Why should organizations continuously monitor risk factors?,sentence_level,500,BAAI/bge-small-en-v1.5,FAISS,5,1.0,1.0,0.02919040000415407
+Which CSF 2.0 functions form the incident response activities in NIST SP 800-61 Rev. 3?,sentence_level,500,BAAI/bge-small-en-v1.5,FAISS,5,0.6087,1.0,0.03357059998961631
+What is the purpose of the preparation activities in incident response?,sentence_level,500,BAAI/bge-small-en-v1.5,FAISS,5,0.95,0.2,0.03097719998913817
+How does continuous improvement contribute to incident response?,sentence_level,500,BAAI/bge-small-en-v1.5,FAISS,5,1.0,0.4,0.030743099996470846
+Why should organizations consider incident response throughout cybersecurity risk management?,sentence_level,500,BAAI/bge-small-en-v1.5,FAISS,5,0.6522,0.8,0.03306509999674745
+What are the three assessment methods described in NIST SP 800-115?,sentence_level,500,BAAI/bge-small-en-v1.5,FAISS,5,0.3704,0.0,0.03244369999447372
+What are the three main phases of a technical security assessment?,sentence_level,500,BAAI/bge-small-en-v1.5,FAISS,5,0.3043,0.0,0.0330171999958111
+What is the purpose of vulnerability scanning?,sentence_level,500,BAAI/bge-small-en-v1.5,FAISS,5,0.7333,0.2,0.029497099996660836
+What should an organization address during security assessment planning?,sentence_level,500,BAAI/bge-small-en-v1.5,FAISS,5,0.4074,0.8,0.03204520000144839
+What is cyber threat information according to NIST SP 800-150?,sentence_level,500,BAAI/bge-small-en-v1.5,FAISS,5,0.4118,0.0,0.035102800000458956
+What types of information can be included in cyber threat information?,sentence_level,500,BAAI/bge-small-en-v1.5,FAISS,5,1.0,0.8,0.03248130000429228
+Why should organizations establish information sharing goals and objectives?,sentence_level,500,BAAI/bge-small-en-v1.5,FAISS,5,1.0,1.0,0.032525700007681735
+What should organizations identify when establishing internal cyber threat information sources?,sentence_level,500,BAAI/bge-small-en-v1.5,FAISS,5,1.0,1.0,0.03531259999726899
+What is information security?,sentence_level,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,0.9565,0.4,0.013136100009432994
+What are the three fundamental objectives of information security?,sentence_level,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,0.5652,0.2,0.01724339999782387
+What is the difference between data integrity and system integrity?,sentence_level,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,1.0,1.0,0.01654499999131076
+What are security controls?,sentence_level,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,1.0,1.0,0.016707100003259256
+What are the four steps in the NIST risk assessment process?,sentence_level,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,0.6471,0.4,0.017875199991976842
+What factors are considered when identifying adversarial threat sources?,sentence_level,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,0.9444,0.8,0.017750600003637373
+How does NIST determine the risk associated with a threat event?,sentence_level,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,0.6667,0.6,0.015974900001310743
+Why should organizations continuously monitor risk factors?,sentence_level,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,1.0,1.0,0.01756760000716895
+Which CSF 2.0 functions form the incident response activities in NIST SP 800-61 Rev. 3?,sentence_level,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,0.6957,0.8,0.020952199993189424
+What is the purpose of the preparation activities in incident response?,sentence_level,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,0.5,0.2,0.016761199993197806
+How does continuous improvement contribute to incident response?,sentence_level,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,1.0,0.2,0.015858099999604747
+Why should organizations consider incident response throughout cybersecurity risk management?,sentence_level,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,1.0,1.0,0.02045560000988189
+What are the three assessment methods described in NIST SP 800-115?,sentence_level,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,0.3704,0.0,0.01775679999263957
+What are the three main phases of a technical security assessment?,sentence_level,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,0.3478,0.4,0.07982780000020284
+What is the purpose of vulnerability scanning?,sentence_level,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,0.6,0.0,0.017643300001509488
+What should an organization address during security assessment planning?,sentence_level,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,0.963,1.0,0.015389399995910935
+What is cyber threat information according to NIST SP 800-150?,sentence_level,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,0.5882,0.6,0.02004819999274332
+What types of information can be included in cyber threat information?,sentence_level,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,1.0,0.8,0.014905099989846349
+Why should organizations establish information sharing goals and objectives?,sentence_level,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,1.0,1.0,0.017595199999050237
+What should organizations identify when establishing internal cyber threat information sources?,sentence_level,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,1.0,1.0,0.016180499995243736
+What is information security?,semantic,500,BAAI/bge-small-en-v1.5,FAISS,5,1.0,1.0,0.03005460000713356
+What are the three fundamental objectives of information security?,semantic,500,BAAI/bge-small-en-v1.5,FAISS,5,0.2609,0.0,0.03203390000271611
+What is the difference between data integrity and system integrity?,semantic,500,BAAI/bge-small-en-v1.5,FAISS,5,1.0,1.0,0.03445150000334252
+What are security controls?,semantic,500,BAAI/bge-small-en-v1.5,FAISS,5,1.0,1.0,0.026893000002019107
+What are the four steps in the NIST risk assessment process?,semantic,500,BAAI/bge-small-en-v1.5,FAISS,5,0.6471,0.4,0.032793099991977215
+What factors are considered when identifying adversarial threat sources?,semantic,500,BAAI/bge-small-en-v1.5,FAISS,5,1.0,0.8,0.032569600007263944
+How does NIST determine the risk associated with a threat event?,semantic,500,BAAI/bge-small-en-v1.5,FAISS,5,0.6667,0.4,0.03259059999254532
+Why should organizations continuously monitor risk factors?,semantic,500,BAAI/bge-small-en-v1.5,FAISS,5,1.0,1.0,0.03178240000852384
+Which CSF 2.0 functions form the incident response activities in NIST SP 800-61 Rev. 3?,semantic,500,BAAI/bge-small-en-v1.5,FAISS,5,0.6087,1.0,0.03442660000291653
+What is the purpose of the preparation activities in incident response?,semantic,500,BAAI/bge-small-en-v1.5,FAISS,5,0.95,0.4,0.030264399989391677
+How does continuous improvement contribute to incident response?,semantic,500,BAAI/bge-small-en-v1.5,FAISS,5,1.0,0.6,0.031159499994828366
+Why should organizations consider incident response throughout cybersecurity risk management?,semantic,500,BAAI/bge-small-en-v1.5,FAISS,5,0.6522,0.6,0.034012399992207065
+What are the three assessment methods described in NIST SP 800-115?,semantic,500,BAAI/bge-small-en-v1.5,FAISS,5,0.3704,0.0,0.030427500008954667
+What are the three main phases of a technical security assessment?,semantic,500,BAAI/bge-small-en-v1.5,FAISS,5,0.3043,0.0,0.03186180000193417
+What is the purpose of vulnerability scanning?,semantic,500,BAAI/bge-small-en-v1.5,FAISS,5,0.7333,0.2,0.02999009999621194
+What should an organization address during security assessment planning?,semantic,500,BAAI/bge-small-en-v1.5,FAISS,5,1.0,1.0,0.031251699998392724
+What is cyber threat information according to NIST SP 800-150?,semantic,500,BAAI/bge-small-en-v1.5,FAISS,5,0.4706,0.2,0.03240820000064559
+What types of information can be included in cyber threat information?,semantic,500,BAAI/bge-small-en-v1.5,FAISS,5,1.0,1.0,0.03070780000416562
+Why should organizations establish information sharing goals and objectives?,semantic,500,BAAI/bge-small-en-v1.5,FAISS,5,1.0,1.0,0.03178059999481775
+What should organizations identify when establishing internal cyber threat information sources?,semantic,500,BAAI/bge-small-en-v1.5,FAISS,5,1.0,1.0,0.03279710000788327
+What is information security?,semantic,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,0.9565,0.4,0.010972099989885464
+What are the three fundamental objectives of information security?,semantic,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,0.5652,0.4,0.021679900004528463
+What is the difference between data integrity and system integrity?,semantic,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,1.0,1.0,0.019738800008781254
+What are security controls?,semantic,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,1.0,1.0,0.016767699999036267
+What are the four steps in the NIST risk assessment process?,semantic,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,0.6471,0.6,0.019376199998077936
+What factors are considered when identifying adversarial threat sources?,semantic,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,0.8889,0.8,0.026942299999063835
+How does NIST determine the risk associated with a threat event?,semantic,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,0.7222,0.8,0.018820500001311302
+Why should organizations continuously monitor risk factors?,semantic,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,1.0,1.0,0.018188000001828186
+Which CSF 2.0 functions form the incident response activities in NIST SP 800-61 Rev. 3?,semantic,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,0.6087,0.8,0.019577300001401454
+What is the purpose of the preparation activities in incident response?,semantic,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,0.5,0.4,0.019354999996721745
+How does continuous improvement contribute to incident response?,semantic,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,1.0,0.2,0.018184900007327087
+Why should organizations consider incident response throughout cybersecurity risk management?,semantic,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,1.0,0.8,0.01963629999954719
+What are the three assessment methods described in NIST SP 800-115?,semantic,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,0.3704,0.0,0.021577000006800517
+What are the three main phases of a technical security assessment?,semantic,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,0.3913,0.4,0.018851400003768504
+What is the purpose of vulnerability scanning?,semantic,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,0.6,0.0,0.018797600001562387
+What should an organization address during security assessment planning?,semantic,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,1.0,1.0,0.018470700000762008
+What is cyber threat information according to NIST SP 800-150?,semantic,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,0.4118,0.8,0.021080599995912053
+What types of information can be included in cyber threat information?,semantic,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,1.0,0.8,0.02018960000714287
+Why should organizations establish information sharing goals and objectives?,semantic,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,1.0,1.0,0.01553839999542106
+What should organizations identify when establishing internal cyber threat information sources?,semantic,500,sentence-transformers/all-MiniLM-L6-v2,FAISS,5,1.0,1.0,0.01841269999567885

@@ -7,3 +7,4 @@ faiss-cpu
 chromadb
 matplotlib
 openai
+google-genai

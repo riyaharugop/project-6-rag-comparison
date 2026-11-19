@@ -168,6 +168,112 @@ The project is divided among four members:
 
 All members will contribute to testing, integration, documentation and final project preparation.
 
+## Member 4 – Answer Generation, Evaluation and Integration
+
+### Answer Generation
+
+The answer generation module integrates the Google Gemini API to generate responses using context retrieved from the RAG pipeline.
+
+Implemented in `src/member4/generation.py`, the module:
+
+- Accepts user questions and retrieved chunks.
+- Constructs a context-based prompt using retrieved information.
+- Instructs the model to answer using only the provided context.
+- Includes source labels for reference.
+- Measures answer generation latency.
+- Handles temporary server errors and API quota limitations.
+
+### Evaluation Metrics
+
+The evaluation module, implemented in `src/member4/evaluation.py`, provides custom metrics to assess retrieval and answer generation quality.
+
+| Metric | Description |
+|---|---|
+| Context Recall | Proportion of reference-evidence tokens present in retrieved context |
+| Context Precision | Proportion of retrieved chunks considered relevant to reference evidence |
+| Groundedness | Proportion of generated answer sentences supported by retrieved context |
+| Retrieval Latency | Time taken to retrieve relevant chunks |
+| Generation Latency | Time taken to generate an answer |
+| End-to-End Latency | Combined retrieval and generation latency |
+
+**Evaluation approach:** Context recall uses token overlap. Context precision considers a chunk relevant when at least 15% of its unique words overlap with the reference evidence. Groundedness considers a sentence supported when at least 30% of its unique words occur in the retrieved context. These are custom lexical-overlap approximations, not official RAGAS scores.
+
+### Retrieval Experiment Integration
+
+The retrieval experiment module integrates the chunking, embedding and vector-store components developed by the team.
+
+Six configurations are evaluated:
+
+| Configuration | Chunking Strategy | Embedding Model |
+|---|---|---|
+| 1 | Fixed-size | BGE |
+| 2 | Fixed-size | Hugging Face MiniLM |
+| 3 | Sentence-level | BGE |
+| 4 | Sentence-level | Hugging Face MiniLM |
+| 5 | Semantic | BGE |
+| 6 | Semantic | Hugging Face MiniLM |
+
+The core experiments use:
+
+- Chunk size: 500
+- Vector store: FAISS
+- Top-k retrieval: 5
+- Evaluation questions: 20
+- Document corpus: Five technical documents
+
+The results are saved in `results/retrieval_metrics.csv`.
+
+### Experimental Results and Analysis
+
+The retrieval comparison produced 120 records across the six configurations, with 20 evaluation questions per configuration.
+
+Average results:
+
+| Configuration | Context Recall | Context Precision | Retrieval Latency (seconds) |
+|---|---:|---:|---:|
+| Fixed-size + BGE | 0.8039 | 0.55 | 0.0294 |
+| Fixed-size + MiniLM | 0.7724 | 0.53 | 0.0190 |
+| Sentence-level + BGE | 0.7477 | 0.55 | 0.0341 |
+| Sentence-level + MiniLM | 0.7922 | 0.62 | 0.0203 |
+| Semantic + BGE | 0.7832 | 0.63 | 0.0317 |
+| Semantic + MiniLM | 0.7831 | 0.66 | 0.0191 |
+
+**Key observations:**
+
+- Fixed-size chunking with BGE achieved the highest average context recall.
+- Semantic chunking with MiniLM achieved the highest average context precision.
+- Fixed-size chunking with MiniLM recorded the lowest average retrieval latency.
+- Semantic chunking with MiniLM provided a strong balance between retrieval precision, recall and speed.
+
+Based on these results, semantic chunking with MiniLM is recommended when balancing retrieval quality and speed. Fixed-size chunking with BGE is suitable when context recall is the priority.
+
+### Generation Comparison
+
+The generation comparison module evaluates answer generation across the six retrieval configurations using Gemini.
+
+The current generation comparison is a one-question pilot. Some configurations generated successful responses, while others encountered Gemini API `429 RESOURCE_EXHAUSTED` errors because the free-tier daily quota was exhausted.
+
+These outcomes are preserved in `results/generation_comparison.csv`. The generation comparison is therefore a limited pilot rather than a completed six-configuration generation evaluation.
+
+### Visualizations and Result Files
+
+The experiment outputs are stored in the `results/` directory.
+
+| File | Description |
+|---|---|
+| `retrieval_metrics.csv` | Individual retrieval evaluation results |
+| `generation_comparison.csv` | Generation comparison results and recorded errors |
+| `comparison_summary.csv` | Aggregated retrieval performance |
+| `decision_matrix.csv` | Comparative decision matrix |
+| `results_summary.md` | Summary of experimental findings |
+| `charts/context_recall.png` | Context recall comparison |
+| `charts/context_precision.png` | Context precision comparison |
+| `charts/retrieval_latency_seconds.png` | Retrieval latency comparison |
+
+---
+
+---
+
 ## 📊 Expected Outcomes
 
 - A functional RAG experimentation pipeline.
